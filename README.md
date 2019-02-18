@@ -1,8 +1,10 @@
-### Requirements
+# web-crawler
 
-### Structure
-- `page-parser`
-- `web-parser`
+Simple webcrawler which follow the links within the same domain.
+
+### Parts / Structure
+- `page-parser` - getting source of html and following the link within it
+- `web-crawler-ui` - basic user interface for `web-crawler`
 - `lambda-parser`
 
 ### How to run
@@ -20,6 +22,7 @@ serverless config credentials --provider aws --key YOUR_ACCESS_KEY --secret YOUR
 ```
 
 #### Some why's
-* `nix` - to get fully isolated environment with all node dependencies
-* `serverless` - no vendor lock in
-* `lambda` - there is no point to hold an instance for `RPC` like call
+* [`nix-shell`](https://nixos.org/nixos/nix-pills/developing-with-nix-shell.html) - to get fully isolated, reproducible environment with all `node.js` dependencies without global flag required
+* [`serverless`](https://serverless.com/) - easy to setup, test and deploy to cloud and locally, no vendor lock in
+* [`lambda`](https://aws.amazon.com/lambda/) - there is no point to hold an instance like `EC2` for [`RPC`](https://en.wikipedia.org/wiki/Remote_procedure_call) like call
+* [`yarn workspaces`](https://yarnpkg.com/lang/en/docs/workspaces/) - to have clean view on `npm` dependency tree and to have more meaningful parts of app
