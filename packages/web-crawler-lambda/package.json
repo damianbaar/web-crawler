@@ -1,0 +1,23 @@
+{
+  "name": "web-crawler-lambda",
+  "version": "1.0.0",
+  "description": "Lambda web-crawler",
+  "private": false,
+  "scripts": {
+    "test:unit": "jest",
+    "test": "yarn run test:unit",
+    "offline": "serverless offline start --port 8080"
+  },
+  "dependencies": {
+    "page-parser": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.19",
+    "serverless": "^1.37.1",
+    "serverless-offline": "^4.4.2",
+    "serverless-webpack": "^5.2.0",
+    "source-map-support": "^0.5.10"
+  },
+  "author": "Damian Baar",
+  "license": "MIT"
+}

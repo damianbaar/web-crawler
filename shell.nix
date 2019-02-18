@@ -38,9 +38,7 @@ stdenv.mkDerivation rec {
       zshrc = builtins.path { path = ./zdotdir/zshenv; };
 
       shellHook= ''
-        echo "welcome in my world"
         source init-environment
-        source init-git-subrepo
         yarn install
         echo "Hey Hey Hey, have a happy time!"
       '';

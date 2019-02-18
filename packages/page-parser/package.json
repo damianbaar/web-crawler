@@ -1,0 +1,7 @@
+{
+  "name": "page-parser",
+  "version": "0.1.0",
+  "description": "Traverse HTML and follod the a href attributes",
+  "main": "src/index.ts",
+  "license": "MIT"
+}
