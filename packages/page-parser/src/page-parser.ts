@@ -5,10 +5,12 @@ import { ordString } from 'fp-ts/lib/Ord'
 import { contramap } from 'fp-ts/lib/Setoid'
 import { pipe, identity } from 'fp-ts/lib/function'
 import { parse as parseURL, UrlWithStringQuery } from 'url'
+import pMap from 'p-map'
 
 type Labels = [string, string]
 type URL = string
 type AnchorDescriptor = [Labels, URL]
+
 const UnknownLabel = 'cannot_determine_label'
 
 export const trimText =
@@ -55,7 +57,8 @@ export const anchorsToTuple =
     ]) as AnchorDescriptor[]
 
 const urlSetoid =
-  contramap((hrefDescriptor: AnchorDescriptor) => hrefDescriptor[1], ordString)
+  contramap(([_, linkURL]: AnchorDescriptor) =>
+    linkURL, ordString)
 
 export const skipDuplicates = uniq(urlSetoid)
 
@@ -77,7 +80,7 @@ const withFiltering = pipe(
 )
 
 export const getURLsFromPage =
-  (baseURL: string, withDomainFiltering: boolean = false) =>
+  (baseURL: string, withDomainFiltering: boolean = true) =>
     axios
       .get(baseURL)
       .then(r => parseAnchors(r.data))
@@ -86,7 +89,81 @@ export const getURLsFromPage =
         : identity
       )
 
-// TODO filter out not related to current domain
-// export const traversePage =
-//   (url: AnchorDescriptor) =>
-//     getURLsFromPage(urls)
+interface TreeNode {
+  details: AnchorDescriptor
+  parent: URL
+  links: AnchorDescriptor[]
+}
+
+type Tree = Record<string, TreeNode>
+
+const checkIfAlreadyVisited =
+  (tree: Tree) =>
+    ([_, linkURL]: AnchorDescriptor) =>
+      !tree[linkURL]
+
+interface TraverseOptions {
+  concurrency: 2
+}
+
+const doEffect = <P>(effect: (val: P) => void) => (result: P) => {
+  effect(result)
+  return result
+}
+
+// better would be to go with monad transformer -> StateTaskEither
+export const traversePage =
+  (baseURL: string, options: TraverseOptions = { concurrency: 2 }, tree: Tree = {}): Promise<Tree> =>
+    getURLsFromPage(baseURL)
+      .then(doEffect((links) => { tree[baseURL] = { ...tree[baseURL], links } }))
+      .then(hrefs => hrefs.filter(checkIfAlreadyVisited(tree)))
+      .then(hrefs =>
+        hrefs
+          .map(doEffect(([labels, link]) => {
+            tree[link] = {
+              ...tree[link],
+              details: [labels, link],
+              parent: baseURL,
+            }
+          })))
+      .then(hrefs => hrefs.map(([_, link]) => link))
+      .then(pagesToTraverse =>
+        pMap(pagesToTraverse, link =>
+          traversePage(link, options, tree), options)
+      )
+      .then(_ => tree)
+
+const resolveTreeNode =
+  (lookup: Tree, node: string, parent: string): TreeNode => ({
+    ...lookup[node],
+    links: lookup[node]
+      .links
+      .map(desc =>
+        desc[1] === parent
+          ? desc
+          : resolveTreeNode(lookup, desc[1], node))
+      .filter(Boolean) as AnchorDescriptor[]
+  })
+
+export const drawTree =
+  (root: URL) =>
+    (lookup: Tree) => {
+      const rootNode = lookup[root]
+      return {
+        [root]: {
+          ...rootNode,
+          links: rootNode
+            .links
+            .map((desc) =>
+              lookup[desc[1]].links ?
+                resolveTreeNode(lookup, desc[1], lookup[desc[1]].parent)
+                : desc
+            )
+        }
+      }
+    }
+
+export const printSiteMap =
+  (baseURL: URL) =>
+    traversePage(baseURL)
+      .then(drawTree(baseURL))

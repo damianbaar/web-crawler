@@ -2,7 +2,10 @@ import {
   parseHTML,
   getTextFromNode,
   getURLsFromPage,
-  parseAnchors
+  parseAnchors,
+  traversePage,
+  drawTree,
+  printSiteMap
 } from "../src/page-parser"
 
 import mockAxios from "axios"
@@ -82,12 +85,26 @@ const pageA =
 const pageB = (baseURL: string) => `
   <html>
   <a href="${baseURL}/pageC">Page C</a>
+  <a href="${baseURL}/pageA">Page C</a>
+  <a href="${baseURL}/pageE">Page E</a>
   </html>
 `
 
 const pageC = (baseURL: string) => `
   <html>
-  <a href="${baseURL}/pageB">Page B</a>
+  <a href="${baseURL}/pageF">Page F</a>
+  </html>
+`
+
+const pageE = (baseURL: string) => `
+  <html>
+  <a href="${baseURL}/pageG">Page G</a>
+  </html>
+`
+
+const pageG = (baseURL: string) => `
+  <html>
+  <a href="${baseURL}/pageX">Page X</a>
   </html>
 `
 
@@ -96,7 +113,9 @@ const dummyBaseURL = 'https://my-super-cool-domain.com'
 const siteMap: Record<string, string> = {
   '/pageA': pageA(dummyBaseURL),
   '/pageB': pageB(dummyBaseURL),
-  '/pageC': pageC(dummyBaseURL)
+  '/pageC': pageC(dummyBaseURL),
+  '/pageE': pageE(dummyBaseURL),
+  '/pageG': pageG(dummyBaseURL)
 }
 
 test("get all urls from page without domain filtering", () => {
@@ -123,4 +142,59 @@ test("get all urls from page with domain filtering", () => {
     .catch(() => fail())
 })
 
-// test("get urls from pages", () =>
+test("traverse dummy page", () => {
+  // @ts-ignore
+  mockAxios.get.mockImplementation((url) => {
+    const { path } = parseURL(url)
+    return new Promise(res => setTimeout(() => res({ data: siteMap[path as string] }), 50))
+  })
+
+  return traversePage("https://my-super-cool-domain.com/pageA")
+    .then(result => {
+      // @ts-ignore
+      mockAxios.get.mockClear()
+      expect(result[`${dummyBaseURL}/pageX`]).not.toBeNull()
+      expect(result).toMatchSnapshot()
+    })
+})
+
+test('print sitemap', () => {
+  // @ts-ignore
+  mockAxios.get.mockImplementation((url) => {
+    const { path } = parseURL(url)
+    return Promise.resolve({ data: siteMap[path as string] })
+  })
+
+  const baseURL = "https://my-super-cool-domain.com/pageA"
+  return traversePage(baseURL)
+    .then(drawTree(baseURL))
+    .then(result => expect(result).toMatchSnapshot())
+})
+
+// with circular reference
+const pageC2 = (baseURL: string) => `
+  <html>
+  <a href="${baseURL}/pageB">Page B</a>
+  </html>
+`
+
+const pageB2 = (baseURL: string) => `
+  <html>
+  <a href="${baseURL}/pageA">Page A</a>
+  </html>
+`
+const siteMapCircular: Record<string, string> = {
+  '/pageA': pageC2(dummyBaseURL),
+  '/pageB': pageB2(dummyBaseURL)
+}
+
+test('print sitemap with circular link', () => {
+  // @ts-ignore
+  mockAxios.get.mockImplementation((url) => {
+    const { path } = parseURL(url)
+    return Promise.resolve({ data: siteMapCircular[path as string] })
+  })
+
+  return printSiteMap("https://my-super-cool-domain.com/pageA")
+    .then(result => expect(result).toMatchSnapshot())
+})

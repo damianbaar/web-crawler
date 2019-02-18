@@ -7,6 +7,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "node-html-parser": "^1.1.12",
+    "p-map": "^2.0.0",
     "fp-ts": "^1.13.0"
   }
 }
