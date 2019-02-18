@@ -7,7 +7,7 @@ import { pipe } from 'fp-ts/lib/function'
 
 type Labels = [string, string]
 type URL = string
-type Hrefs = [Labels, URL]
+type AnchorDescriptor = [Labels, URL]
 const UnknownLabel = 'cannot_determine_label'
 
 export const trimText =
@@ -52,10 +52,10 @@ export const anchorsToTuple =
     html.map(d => [
       getTextFromNode(d.childNodes),
       d.attributes.href
-    ]) as Hrefs[]
+    ]) as AnchorDescriptor[]
 
 const urlSetoid =
-  contramap((f: Hrefs) => f[1], ordString)
+  contramap((hrefDescriptor: AnchorDescriptor) => hrefDescriptor[1], ordString)
 
 export const skipDuplicates = uniq(urlSetoid)
 
@@ -71,3 +71,8 @@ export const getURLsFromPage =
     axios
       .get(url)
       .then(r => parseAnchors(r.data))
+
+// TODO filter out not related to current domain
+// export const traversePage =
+//   (url: AnchorDescriptor) =>
+//     getURLsFromPage(urls)
