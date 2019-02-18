@@ -7,10 +7,17 @@ Simple webcrawler which follow the links within the same domain.
 - `web-crawler-ui` - basic user interface for `web-crawler`
 - `lambda-parser`
 
-### How to run
+### How to run in development mode
 * get `nixpkg` via `curl https://nixos.org/nix/install | sh`
 * clone this repo
 * within folder run `shell nix` command
+
+### How to run tests and lints
+* `unit tests` - `yarn test:unit`
+* `lints` - `yarn lint`
+
+#### Watch mode
+Just append at the end `--watch` param
 
 #### For `zsh` users
 * as you will spawn another shell via `nix shell` some of aliases / commands / paths would not work, however if you are an `zsh` user it should be seamless, assuming your `zsh` config lives within home directory, this is `~/.zshrc` if not, override `zdotdir/zshenv` before running `nix-shell` and apply necessary config.

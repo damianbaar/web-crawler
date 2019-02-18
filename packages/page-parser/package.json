@@ -1,7 +1,12 @@
 {
   "name": "page-parser",
-  "version": "0.1.0",
-  "description": "Traverse HTML and follod the a href attributes",
   "main": "src/index.ts",
-  "license": "MIT"
+  "version": "0.1.0",
+  "description": "Traverse HTML and follow <a href/> attributes",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "node-html-parser": "^1.1.12",
+    "fp-ts": "^1.13.0"
+  }
 }
