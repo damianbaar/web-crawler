@@ -1,6 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`get all urls from page 1`] = `
+exports[`get all urls from page with domain filtering 1`] = `
+Array [
+  Array [
+    Array [
+      "Page B",
+    ],
+    "https://my-super-cool-domain.com/pageB",
+  ],
+  Array [
+    Array [
+      "Page C",
+    ],
+    "https://my-super-cool-domain.com/pageC",
+  ],
+  Array [
+    Array [
+      "Page D",
+    ],
+    "https://my-super-cool-domain.com/pageD",
+  ],
+]
+`;
+
+exports[`get all urls from page without domain filtering 1`] = `
 Array [
   Array [
     Array [
@@ -32,6 +55,12 @@ Array [
       "Delivering an exceptional mortgage customer experience for Allied Irish Bank",
     ],
     "https://wiprodigital.com/cases/delivering-an-exceptional-mortgage-customer-experience-for-allied-irish-bank/",
+  ],
+  Array [
+    Array [
+      "some other domain",
+    ],
+    "https://some-other-domain",
   ],
 ]
 `;

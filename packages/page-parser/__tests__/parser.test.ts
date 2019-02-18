@@ -6,6 +6,7 @@ import {
 } from "../src/page-parser"
 
 import mockAxios from "axios"
+import { parse as parseURL } from 'url'
 
 const simpleHREF = `
   <a class="wd-navbar-nav-elem-link wd-nav-elem-link" href="https://wiprodigital.com/what-we-do#wdwork_cases">Case studies</a>
@@ -74,6 +75,7 @@ const pageA =
   <a href="${baseURL}/pageD">Page D</a>
   ${simpleHREF}
   ${nestedHREFText}
+  <a href="https://some-other-domain">some other domain</a>
   </html>
 `
 
@@ -92,20 +94,31 @@ const pageC = (baseURL: string) => `
 const dummyBaseURL = 'https://my-super-cool-domain.com'
 
 const siteMap: Record<string, string> = {
-  pageA: pageA(dummyBaseURL),
-  pageB: pageB(dummyBaseURL),
-  pageC: pageC(dummyBaseURL)
+  '/pageA': pageA(dummyBaseURL),
+  '/pageB': pageB(dummyBaseURL),
+  '/pageC': pageC(dummyBaseURL)
 }
 
-test("get all urls from page", () => {
+test("get all urls from page without domain filtering", () => {
   // @ts-ignore
-  mockAxios.get.mockImplementationOnce((url) =>
-    Promise.resolve({
-      data: siteMap[url]
-    })
-  )
+  mockAxios.get.mockImplementationOnce((url) => {
+    const { path } = parseURL(url)
+    return Promise.resolve({ data: siteMap[path as string] })
+  })
 
-  return getURLsFromPage("pageA")
+  return getURLsFromPage("https://my-super-cool-domain.com/pageA", false)
+    .then(result => expect(result).toMatchSnapshot())
+    .catch(() => fail())
+})
+
+test("get all urls from page with domain filtering", () => {
+  // @ts-ignore
+  mockAxios.get.mockImplementationOnce((url) => {
+    const { path } = parseURL(url)
+    return Promise.resolve({ data: siteMap[path as string] })
+  })
+
+  return getURLsFromPage("https://my-super-cool-domain.com/pageA", true)
     .then(result => expect(result).toMatchSnapshot())
     .catch(() => fail())
 })
