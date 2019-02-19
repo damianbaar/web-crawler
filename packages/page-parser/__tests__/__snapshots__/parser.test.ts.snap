@@ -2,202 +2,158 @@
 
 exports[`get all urls from page with domain filtering 1`] = `
 Array [
-  Array [
-    Array [
+  Object {
+    "labels": Array [
       "Page B",
     ],
-    "https://my-super-cool-domain.com/pageB",
-  ],
-  Array [
-    Array [
+    "url": "https://my-super-cool-domain.com/pageB",
+  },
+  Object {
+    "labels": Array [
       "Page C",
     ],
-    "https://my-super-cool-domain.com/pageC",
-  ],
-  Array [
-    Array [
+    "url": "https://my-super-cool-domain.com/pageC",
+  },
+  Object {
+    "labels": Array [
       "Page D",
     ],
-    "https://my-super-cool-domain.com/pageD",
-  ],
+    "url": "https://my-super-cool-domain.com/pageD",
+  },
 ]
 `;
 
 exports[`get all urls from page without domain filtering 1`] = `
 Array [
-  Array [
-    Array [
+  Object {
+    "labels": Array [
       "Page B",
     ],
-    "https://my-super-cool-domain.com/pageB",
-  ],
-  Array [
-    Array [
+    "url": "https://my-super-cool-domain.com/pageB",
+  },
+  Object {
+    "labels": Array [
       "Page C",
     ],
-    "https://my-super-cool-domain.com/pageC",
-  ],
-  Array [
-    Array [
+    "url": "https://my-super-cool-domain.com/pageC",
+  },
+  Object {
+    "labels": Array [
       "Page D",
     ],
-    "https://my-super-cool-domain.com/pageD",
-  ],
-  Array [
-    Array [
+    "url": "https://my-super-cool-domain.com/pageD",
+  },
+  Object {
+    "labels": Array [
       "Case studies",
     ],
-    "https://wiprodigital.com/what-we-do#wdwork_cases",
-  ],
-  Array [
-    Array [
+    "url": "https://wiprodigital.com/what-we-do#wdwork_cases",
+  },
+  Object {
+    "labels": Array [
       "Case Study",
       "Delivering an exceptional mortgage customer experience for Allied Irish Bank",
     ],
-    "https://wiprodigital.com/cases/delivering-an-exceptional-mortgage-customer-experience-for-allied-irish-bank/",
-  ],
-  Array [
-    Array [
+    "url": "https://wiprodigital.com/cases/delivering-an-exceptional-mortgage-customer-experience-for-allied-irish-bank/",
+  },
+  Object {
+    "labels": Array [
       "some other domain",
     ],
-    "https://some-other-domain",
-  ],
+    "url": "https://some-other-domain",
+  },
 ]
 `;
 
 exports[`print sitemap 1`] = `
 Object {
-  "https://my-super-cool-domain.com/pageA": Object {
-    "links": Array [
-      Object {
-        "details": Array [
-          Array [
+  "https://my-super-cool-domain.com/pageA": Array [
+    Object {
+      "links": Array [
+        Object {
+          "labels": Array [
             "Page B",
           ],
-          "https://my-super-cool-domain.com/pageB",
-        ],
-        "links": Array [
-          Object {
-            "details": Array [
-              Array [
-                "Page C",
-              ],
-              "https://my-super-cool-domain.com/pageC",
-            ],
-            "links": Array [
-              Object {
-                "details": Array [
-                  Array [
-                    "Page F",
-                  ],
-                  "https://my-super-cool-domain.com/pageF",
-                ],
-                "links": Array [],
-                "parent": "https://my-super-cool-domain.com/pageC",
-              },
-            ],
-            "parent": "https://my-super-cool-domain.com/pageA",
-          },
-          Array [
-            Array [
-              "Page C",
-            ],
-            "https://my-super-cool-domain.com/pageA",
-          ],
-          Object {
-            "details": Array [
-              Array [
+          "links": Array [
+            Object {
+              "labels": Array [
                 "Page E",
               ],
-              "https://my-super-cool-domain.com/pageE",
-            ],
-            "links": Array [
-              Object {
-                "details": Array [
-                  Array [
+              "links": Array [
+                Object {
+                  "labels": Array [
                     "Page G",
                   ],
-                  "https://my-super-cool-domain.com/pageG",
-                ],
-                "links": Array [
-                  Object {
-                    "details": Array [
-                      Array [
+                  "links": Array [
+                    Object {
+                      "labels": Array [
                         "Page X",
                       ],
-                      "https://my-super-cool-domain.com/pageX",
-                    ],
-                    "links": Array [],
-                    "parent": "https://my-super-cool-domain.com/pageG",
-                  },
-                ],
-                "parent": "https://my-super-cool-domain.com/pageE",
-              },
-            ],
-            "parent": "https://my-super-cool-domain.com/pageB",
-          },
-        ],
-        "parent": "https://my-super-cool-domain.com/pageA",
-      },
-      Object {
-        "details": Array [
-          Array [
+                      "links": Array [],
+                      "parent": "https://my-super-cool-domain.com/pageG",
+                      "url": "https://my-super-cool-domain.com/pageX",
+                    },
+                  ],
+                  "parent": "https://my-super-cool-domain.com/pageE",
+                  "url": "https://my-super-cool-domain.com/pageG",
+                },
+              ],
+              "parent": "https://my-super-cool-domain.com/pageB",
+              "url": "https://my-super-cool-domain.com/pageE",
+            },
+          ],
+          "parent": "https://my-super-cool-domain.com/pageA",
+          "url": "https://my-super-cool-domain.com/pageB",
+        },
+        Object {
+          "labels": Array [
             "Page C",
           ],
-          "https://my-super-cool-domain.com/pageC",
-        ],
-        "links": Array [
-          Object {
-            "details": Array [
-              Array [
+          "links": Array [
+            Object {
+              "labels": Array [
                 "Page F",
               ],
-              "https://my-super-cool-domain.com/pageF",
-            ],
-            "links": Array [],
-            "parent": "https://my-super-cool-domain.com/pageC",
-          },
-        ],
-        "parent": "https://my-super-cool-domain.com/pageA",
-      },
-      Object {
-        "details": Array [
-          Array [
+              "links": Array [],
+              "parent": "https://my-super-cool-domain.com/pageC",
+              "url": "https://my-super-cool-domain.com/pageF",
+            },
+          ],
+          "parent": "https://my-super-cool-domain.com/pageA",
+          "url": "https://my-super-cool-domain.com/pageC",
+        },
+        Object {
+          "labels": Array [
             "Page D",
           ],
-          "https://my-super-cool-domain.com/pageD",
-        ],
-        "links": Array [],
-        "parent": "https://my-super-cool-domain.com/pageA",
-      },
-    ],
-  },
+          "links": Array [],
+          "parent": "https://my-super-cool-domain.com/pageA",
+          "url": "https://my-super-cool-domain.com/pageD",
+        },
+      ],
+      "url": "https://my-super-cool-domain.com/pageA",
+    },
+  ],
 }
 `;
 
 exports[`print sitemap with circular link 1`] = `
 Object {
-  "https://my-super-cool-domain.com/pageA": Object {
-    "links": Array [
-      Object {
-        "details": Array [
-          Array [
+  "https://my-super-cool-domain.com/pageA": Array [
+    Object {
+      "links": Array [
+        Object {
+          "labels": Array [
             "Page B",
           ],
-          "https://my-super-cool-domain.com/pageB",
-        ],
-        "links": Array [
-          Array [
-            Array [
-              "Page A",
-            ],
-            "https://my-super-cool-domain.com/pageA",
-          ],
-        ],
-        "parent": "https://my-super-cool-domain.com/pageA",
-      },
-    ],
-  },
+          "links": Array [],
+          "parent": "https://my-super-cool-domain.com/pageA",
+          "url": "https://my-super-cool-domain.com/pageB",
+        },
+      ],
+      "url": "https://my-super-cool-domain.com/pageA",
+    },
+  ],
 }
 `;
 
@@ -205,135 +161,122 @@ exports[`traverse dummy page 1`] = `
 Object {
   "https://my-super-cool-domain.com/pageA": Object {
     "links": Array [
-      Array [
-        Array [
+      Object {
+        "labels": Array [
           "Page B",
         ],
-        "https://my-super-cool-domain.com/pageB",
-      ],
-      Array [
-        Array [
+        "url": "https://my-super-cool-domain.com/pageB",
+      },
+      Object {
+        "labels": Array [
           "Page C",
         ],
-        "https://my-super-cool-domain.com/pageC",
-      ],
-      Array [
-        Array [
+        "url": "https://my-super-cool-domain.com/pageC",
+      },
+      Object {
+        "labels": Array [
           "Page D",
         ],
-        "https://my-super-cool-domain.com/pageD",
-      ],
+        "url": "https://my-super-cool-domain.com/pageD",
+      },
     ],
+    "url": "https://my-super-cool-domain.com/pageA",
   },
   "https://my-super-cool-domain.com/pageB": Object {
-    "details": Array [
-      Array [
-        "Page B",
-      ],
-      "https://my-super-cool-domain.com/pageB",
+    "labels": Array [
+      "Page B",
     ],
     "links": Array [
-      Array [
-        Array [
+      Object {
+        "labels": Array [
           "Page C",
         ],
-        "https://my-super-cool-domain.com/pageC",
-      ],
-      Array [
-        Array [
-          "Page C",
+        "url": "https://my-super-cool-domain.com/pageC",
+      },
+      Object {
+        "labels": Array [
+          "Page A",
         ],
-        "https://my-super-cool-domain.com/pageA",
-      ],
-      Array [
-        Array [
+        "url": "https://my-super-cool-domain.com/pageA",
+      },
+      Object {
+        "labels": Array [
           "Page E",
         ],
-        "https://my-super-cool-domain.com/pageE",
-      ],
+        "url": "https://my-super-cool-domain.com/pageE",
+      },
     ],
     "parent": "https://my-super-cool-domain.com/pageA",
+    "url": "https://my-super-cool-domain.com/pageB",
   },
   "https://my-super-cool-domain.com/pageC": Object {
-    "details": Array [
-      Array [
-        "Page C",
-      ],
-      "https://my-super-cool-domain.com/pageC",
+    "labels": Array [
+      "Page C",
     ],
     "links": Array [
-      Array [
-        Array [
+      Object {
+        "labels": Array [
           "Page F",
         ],
-        "https://my-super-cool-domain.com/pageF",
-      ],
+        "url": "https://my-super-cool-domain.com/pageF",
+      },
     ],
     "parent": "https://my-super-cool-domain.com/pageA",
+    "url": "https://my-super-cool-domain.com/pageC",
   },
   "https://my-super-cool-domain.com/pageD": Object {
-    "details": Array [
-      Array [
-        "Page D",
-      ],
-      "https://my-super-cool-domain.com/pageD",
+    "labels": Array [
+      "Page D",
     ],
     "links": Array [],
     "parent": "https://my-super-cool-domain.com/pageA",
+    "url": "https://my-super-cool-domain.com/pageD",
   },
   "https://my-super-cool-domain.com/pageE": Object {
-    "details": Array [
-      Array [
-        "Page E",
-      ],
-      "https://my-super-cool-domain.com/pageE",
+    "labels": Array [
+      "Page E",
     ],
     "links": Array [
-      Array [
-        Array [
+      Object {
+        "labels": Array [
           "Page G",
         ],
-        "https://my-super-cool-domain.com/pageG",
-      ],
+        "url": "https://my-super-cool-domain.com/pageG",
+      },
     ],
     "parent": "https://my-super-cool-domain.com/pageB",
+    "url": "https://my-super-cool-domain.com/pageE",
   },
   "https://my-super-cool-domain.com/pageF": Object {
-    "details": Array [
-      Array [
-        "Page F",
-      ],
-      "https://my-super-cool-domain.com/pageF",
+    "labels": Array [
+      "Page F",
     ],
     "links": Array [],
     "parent": "https://my-super-cool-domain.com/pageC",
+    "url": "https://my-super-cool-domain.com/pageF",
   },
   "https://my-super-cool-domain.com/pageG": Object {
-    "details": Array [
-      Array [
-        "Page G",
-      ],
-      "https://my-super-cool-domain.com/pageG",
+    "labels": Array [
+      "Page G",
     ],
     "links": Array [
-      Array [
-        Array [
+      Object {
+        "labels": Array [
           "Page X",
         ],
-        "https://my-super-cool-domain.com/pageX",
-      ],
+        "url": "https://my-super-cool-domain.com/pageX",
+      },
     ],
     "parent": "https://my-super-cool-domain.com/pageE",
+    "url": "https://my-super-cool-domain.com/pageG",
   },
   "https://my-super-cool-domain.com/pageX": Object {
-    "details": Array [
-      Array [
-        "Page X",
-      ],
-      "https://my-super-cool-domain.com/pageX",
+    "labels": Array [
+      "Page X",
     ],
     "links": Array [],
     "parent": "https://my-super-cool-domain.com/pageG",
+    "url": "https://my-super-cool-domain.com/pageX",
   },
 }
 `;

@@ -3,13 +3,21 @@ import { parse, Node, HTMLElement, NodeType } from 'node-html-parser'
 import { uniq } from 'fp-ts/lib/Array'
 import { ordString } from 'fp-ts/lib/Ord'
 import { contramap } from 'fp-ts/lib/Setoid'
-import { pipe, identity } from 'fp-ts/lib/function'
+import { pipe, identity, not } from 'fp-ts/lib/function'
 import { parse as parseURL, UrlWithStringQuery } from 'url'
 import pMap from 'p-map'
 
 type Labels = [string, string]
 type URL = string
-type AnchorDescriptor = [Labels, URL]
+type Error = string
+interface AnchorDescriptor {
+  labels: Labels
+  url: URL
+  error?: Error
+  parent: string
+  resolved: boolean
+  links: AnchorDescriptor[]
+}
 
 const UnknownLabel = 'cannot_determine_label'
 
@@ -51,14 +59,13 @@ export const getAnchors =
 
 export const anchorsToTuple =
   (html: HTMLElement[]) =>
-    html.map(d => [
-      getTextFromNode(d.childNodes),
-      d.attributes.href
-    ]) as AnchorDescriptor[]
+    html.map(d => ({
+      labels: getTextFromNode(d.childNodes),
+      url: d.attributes.href
+    }) as AnchorDescriptor)
 
 const urlSetoid =
-  contramap(([_, linkURL]: AnchorDescriptor) =>
-    linkURL, ordString)
+  contramap(({ url }: AnchorDescriptor) => url, ordString)
 
 export const skipDuplicates = uniq(urlSetoid)
 
@@ -72,7 +79,8 @@ export const parseAnchors = pipe(
 export const filterOutLinksOutsideDomain =
   ({ hostname }: UrlWithStringQuery) =>
     (hrefs: AnchorDescriptor[]) =>
-      hrefs.filter(([_, href]) => href.indexOf(hostname as string) > -1)
+      hrefs.filter(({ url }) =>
+        hostname === parseURL(url).hostname)
 
 const withFiltering = pipe(
   parseURL,
@@ -80,30 +88,31 @@ const withFiltering = pipe(
 )
 
 export const getURLsFromPage =
-  (baseURL: string, withDomainFiltering: boolean = true) =>
+  (baseURL: string, withDomainFiltering: boolean = true): Promise<AnchorDescriptor[]> =>
     axios
       .get(baseURL)
-      .then(r => parseAnchors(r.data))
-      .then(withDomainFiltering
-        ? withFiltering(baseURL)
-        : identity
+      .then(d =>
+        Promise
+          .resolve(parseAnchors(d.data))
+          .then(withDomainFiltering
+            ? withFiltering(baseURL)
+            : identity
+          )
+        , error =>
+          ((error.response && error.response.status === 404
+            ? [{ error: error.response.status, url: baseURL, links: [] }]
+            : [{ error: 'unknown error', url: baseURL, links: [] }] as unknown) as AnchorDescriptor[])
       )
 
-interface TreeNode {
-  details: AnchorDescriptor
-  parent: URL
-  links: AnchorDescriptor[]
-}
+type Tree = Record<string, AnchorDescriptor>
 
-type Tree = Record<string, TreeNode>
-
-const checkIfAlreadyVisited =
-  (tree: Tree) =>
-    ([_, linkURL]: AnchorDescriptor) =>
-      !tree[linkURL]
+const checkIfShouldSkip =
+  (tree: Tree, baseURL: string) =>
+    ({ url, error }: AnchorDescriptor) =>
+      !!(tree[url] || error || url === baseURL)
 
 interface TraverseOptions {
-  concurrency: 2
+  concurrency: number
 }
 
 const doEffect = <P>(effect: (val: P) => void) => (result: P) => {
@@ -113,57 +122,40 @@ const doEffect = <P>(effect: (val: P) => void) => (result: P) => {
 
 // better would be to go with monad transformer -> StateTaskEither
 export const traversePage =
-  (baseURL: string, options: TraverseOptions = { concurrency: 2 }, tree: Tree = {}): Promise<Tree> =>
+  (baseURL: string, options: TraverseOptions = { concurrency: 20 }, tree: Tree = {}): Promise<Tree> =>
     getURLsFromPage(baseURL)
-      .then(doEffect((links) => { tree[baseURL] = { ...tree[baseURL], links } }))
-      .then(hrefs => hrefs.filter(checkIfAlreadyVisited(tree)))
+      .then(doEffect((links) => { tree[baseURL] = { ...tree[baseURL], links, url: baseURL } }))
+      .then(hrefs => hrefs.filter(not(checkIfShouldSkip(tree, baseURL))))
       .then(hrefs =>
         hrefs
-          .map(doEffect(([labels, link]) => {
-            tree[link] = {
-              ...tree[link],
-              details: [labels, link],
+          .map(doEffect((link) => {
+            tree[link.url] = {
+              ...tree[link.url],
+              ...link,
               parent: baseURL,
-            }
+            } as AnchorDescriptor
           })))
-      .then(hrefs => hrefs.map(([_, link]) => link))
+      .then(hrefs => hrefs.map(({ url }) => url))
       .then(pagesToTraverse =>
         pMap(pagesToTraverse, link =>
           traversePage(link, options, tree), options)
       )
       .then(_ => tree)
 
-const resolveTreeNode =
-  (lookup: Tree, node: string, parent: string): TreeNode => ({
-    ...lookup[node],
-    links: lookup[node]
-      .links
-      .map(desc =>
-        desc[1] === parent
-          ? desc
-          : resolveTreeNode(lookup, desc[1], node))
-      .filter(Boolean) as AnchorDescriptor[]
-  })
+import { unflatten } from 'un-flatten-tree'
 
 export const drawTree =
   (root: URL) =>
     (lookup: Tree) => {
-      const rootNode = lookup[root]
-      return {
-        [root]: {
-          ...rootNode,
-          links: rootNode
-            .links
-            .map((desc) =>
-              lookup[desc[1]].links ?
-                resolveTreeNode(lookup, desc[1], lookup[desc[1]].parent)
-                : desc
-            )
-        }
-      }
+      const tree = unflatten(Object.values(lookup),
+        (node: AnchorDescriptor, parentNode: AnchorDescriptor) => node.parent === parentNode.url,
+        (node: AnchorDescriptor, parentNode: AnchorDescriptor) => parentNode.links.push(node),
+        node => ({ ...node, links: [] })
+      )
+      return { [root]: tree }
     }
 
 export const printSiteMap =
-  (baseURL: URL) =>
-    traversePage(baseURL)
+  (baseURL: URL, options: TraverseOptions = { concurrency: 20 }) =>
+    traversePage(baseURL, options)
       .then(drawTree(baseURL))

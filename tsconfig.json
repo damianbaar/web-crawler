@@ -4,7 +4,6 @@
     "keyofStringsOnly": true,
     "target": "es6",
     "module": "esnext",
-    "declaration": true,
     "moduleResolution": "node",
     "strict": true,
     "sourceMap": true,
@@ -15,6 +14,18 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "esModuleInterop": true
-  }
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "outDir": "dist",
+    "rootDir": ".",
+    "paths": {
+      "~/*": [
+        "packages/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

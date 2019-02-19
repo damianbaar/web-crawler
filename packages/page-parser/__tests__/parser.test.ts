@@ -1,3 +1,5 @@
+jest.mock('axios')
+
 import {
   parseHTML,
   getTextFromNode,
@@ -6,9 +8,9 @@ import {
   traversePage,
   drawTree,
   printSiteMap
-} from "../src/page-parser"
+} from '../src/page-parser'
 
-import mockAxios from "axios"
+import mockAxios from 'axios'
 import { parse as parseURL } from 'url'
 
 const simpleHREF = `
@@ -32,8 +34,8 @@ const nestedHREFText = `
 </a>
 `
 
-test("get label for anchor href", () => {
-  const hrefs = getTextFromNode(parseHTML(simpleHREF).childNodes);
+test('get label for anchor href', () => {
+  const hrefs = getTextFromNode(parseHTML(simpleHREF).childNodes)
   expect(hrefs).toMatchInlineSnapshot(`
 Array [
   "Case studies",
@@ -41,8 +43,8 @@ Array [
 `)
 })
 
-test("get first text child from complex href", () => {
-  const hrefs = getTextFromNode(parseHTML(nestedHREFText).childNodes);
+test('get first text child from complex href', () => {
+  const hrefs = getTextFromNode(parseHTML(nestedHREFText).childNodes)
   expect(hrefs).toMatchInlineSnapshot(`
 Array [
   "Case Study",
@@ -51,7 +53,7 @@ Array [
 `)
 })
 
-test("skip duplicates - pointing to the same href", () => {
+test('skip duplicates - pointing to the same href', () => {
   const hrefs = parseAnchors(`
     ${simpleHREF}
     ${simpleHREF}
@@ -60,18 +62,17 @@ test("skip duplicates - pointing to the same href", () => {
 
   expect(hrefs).toMatchInlineSnapshot(`
 Array [
-  Array [
-    Array [
+  Object {
+    "labels": Array [
       "Case studies",
     ],
-    "https://wiprodigital.com/what-we-do#wdwork_cases",
-  ],
+    "url": "https://wiprodigital.com/what-we-do#wdwork_cases",
+  },
 ]
 `)
 })
 
-const pageA =
-  (baseURL: string) => `
+const pageA = (baseURL: string) => `
   <html>
   <a href="${baseURL}/pageB">Page B</a>
   <a href="${baseURL}/pageC">Page C</a>
@@ -85,7 +86,7 @@ const pageA =
 const pageB = (baseURL: string) => `
   <html>
   <a href="${baseURL}/pageC">Page C</a>
-  <a href="${baseURL}/pageA">Page C</a>
+  <a href="${baseURL}/pageA">Page A</a>
   <a href="${baseURL}/pageE">Page E</a>
   </html>
 `
@@ -118,54 +119,55 @@ const siteMap: Record<string, string> = {
   '/pageG': pageG(dummyBaseURL)
 }
 
-test("get all urls from page without domain filtering", () => {
+test('get all urls from page without domain filtering', () => {
   // @ts-ignore
-  mockAxios.get.mockImplementationOnce((url) => {
+  mockAxios.get.mockImplementationOnce(url => {
     const { path } = parseURL(url)
     return Promise.resolve({ data: siteMap[path as string] })
   })
 
-  return getURLsFromPage("https://my-super-cool-domain.com/pageA", false)
+  return getURLsFromPage('https://my-super-cool-domain.com/pageA', false)
     .then(result => expect(result).toMatchSnapshot())
     .catch(() => fail())
 })
 
-test("get all urls from page with domain filtering", () => {
+test('get all urls from page with domain filtering', () => {
   // @ts-ignore
-  mockAxios.get.mockImplementationOnce((url) => {
+  mockAxios.get.mockImplementationOnce(url => {
     const { path } = parseURL(url)
     return Promise.resolve({ data: siteMap[path as string] })
   })
 
-  return getURLsFromPage("https://my-super-cool-domain.com/pageA", true)
+  return getURLsFromPage('https://my-super-cool-domain.com/pageA', true)
     .then(result => expect(result).toMatchSnapshot())
     .catch(() => fail())
 })
 
-test("traverse dummy page", () => {
+test('traverse dummy page', () => {
   // @ts-ignore
-  mockAxios.get.mockImplementation((url) => {
+  mockAxios.get.mockImplementation(url => {
     const { path } = parseURL(url)
-    return new Promise(res => setTimeout(() => res({ data: siteMap[path as string] }), 50))
+    return new Promise(res =>
+      setTimeout(() => res({ data: siteMap[path as string] }), 50)
+    )
   })
 
-  return traversePage("https://my-super-cool-domain.com/pageA")
-    .then(result => {
-      // @ts-ignore
-      mockAxios.get.mockClear()
-      expect(result[`${dummyBaseURL}/pageX`]).not.toBeNull()
-      expect(result).toMatchSnapshot()
-    })
+  return traversePage('https://my-super-cool-domain.com/pageA').then(result => {
+    // @ts-ignore
+    mockAxios.get.mockClear()
+    expect(result[`${dummyBaseURL}/pageX`]).not.toBeNull()
+    expect(result).toMatchSnapshot()
+  })
 })
 
 test('print sitemap', () => {
   // @ts-ignore
-  mockAxios.get.mockImplementation((url) => {
+  mockAxios.get.mockImplementation(url => {
     const { path } = parseURL(url)
     return Promise.resolve({ data: siteMap[path as string] })
   })
 
-  const baseURL = "https://my-super-cool-domain.com/pageA"
+  const baseURL = 'https://my-super-cool-domain.com/pageA'
   return traversePage(baseURL)
     .then(drawTree(baseURL))
     .then(result => expect(result).toMatchSnapshot())
@@ -190,11 +192,14 @@ const siteMapCircular: Record<string, string> = {
 
 test('print sitemap with circular link', () => {
   // @ts-ignore
-  mockAxios.get.mockImplementation((url) => {
+  mockAxios.get.mockImplementation(url => {
     const { path } = parseURL(url)
     return Promise.resolve({ data: siteMapCircular[path as string] })
   })
-
-  return printSiteMap("https://my-super-cool-domain.com/pageA")
+  const baseURL = 'https://my-super-cool-domain.com/pageA'
+  return printSiteMap(baseURL)
     .then(result => expect(result).toMatchSnapshot())
 })
+
+// TODO add test against 404
+// TODO add test against checking host -> there were wrong used indexOf which is treated as referring url for twitter and linkedin

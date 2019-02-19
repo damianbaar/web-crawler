@@ -1,11 +1,11 @@
 import { APIGatewayProxyHandler } from "aws-lambda"
+import { printSiteMap } from 'page-parser'
 
-export const hello: APIGatewayProxyHandler = async (event, context) => {
+export const getSiteMap: APIGatewayProxyHandler = async (event, context) => {
+  const { page } = event.queryStringParameters || { page: 'https://wiprodigital.com' }
+  const siteMap = await printSiteMap(page, { concurrency: 10 })
   return {
     statusCode: 200,
-    body: JSON.stringify({
-      message: `Go Serverless Webpack (Typescript) v1.0! Your function executed successfully! ${context}`,
-      input: event,
-    }),
+    body: JSON.stringify(siteMap, null, 2),
   };
 };

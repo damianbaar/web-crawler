@@ -1,0 +1,430 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing real page 1`] = `
+Object {
+  "https://wiprodigital.com/": Array [
+    Object {
+      "links": Array [
+        Object {
+          "labels": Array [
+            "cannot_determine_label",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com",
+        },
+        Object {
+          "labels": Array [
+            "Who we are",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/who-we-are",
+        },
+        Object {
+          "labels": Array [
+            "Our story",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/who-we-are/#wdteam-vid",
+        },
+        Object {
+          "labels": Array [
+            "Meet us",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/who-we-are#wdteam_meetus",
+        },
+        Object {
+          "labels": Array [
+            "Leaders",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/who-we-are#wdteam_leaders",
+        },
+        Object {
+          "labels": Array [
+            "What we do",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/what-we-do",
+        },
+        Object {
+          "labels": Array [
+            "Services",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/what-we-do#work-three-circles-row",
+        },
+        Object {
+          "labels": Array [
+            "Case studies",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/what-we-do#wdwork_cases",
+        },
+        Object {
+          "labels": Array [
+            "Partners",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/what-we-do#wdwork_partners",
+        },
+        Object {
+          "labels": Array [
+            "What we think",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/what-we-think",
+        },
+        Object {
+          "labels": Array [
+            "Insights",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/?s=&post_type[]=post",
+        },
+        Object {
+          "labels": Array [
+            "Cases",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/?s=&post_type[]=cases",
+        },
+        Object {
+          "labels": Array [
+            "Events",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/?s=&post_type[]=events",
+        },
+        Object {
+          "labels": Array [
+            "News",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/?s=&post_type[]=news",
+        },
+        Object {
+          "labels": Array [
+            "Join our team",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/join-our-team",
+        },
+        Object {
+          "labels": Array [
+            "Better together",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/join-our-team#wdwork-vid",
+        },
+        Object {
+          "labels": Array [
+            "Our teams",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/join-our-team#wdcareers_team",
+        },
+        Object {
+          "labels": Array [
+            "Open positions",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/join-our-team#wdcareers_jobs",
+        },
+        Object {
+          "labels": Array [
+            "Get in touch",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/get-in-touch",
+        },
+        Object {
+          "labels": Array [
+            "Locations",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/get-in-touch#wddi-locations",
+        },
+        Object {
+          "labels": Array [
+            "Contact us",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/get-in-touch#wddi-contact",
+        },
+        Object {
+          "labels": Array [
+            "Case Study",
+            "Delivering an exceptional mortgage customer experience for Allied Irish Bank",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/cases/delivering-an-exceptional-mortgage-customer-experience-for-allied-irish-bank/",
+        },
+        Object {
+          "labels": Array [
+            "Phil Hall",
+            "The meaning of motion",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/2018/11/20/the-meaning-of-motion/",
+        },
+        Object {
+          "labels": Array [
+            "Todd Murphy",
+            "How Salesforce brings a better Customer Experience to Healthcare",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/2018/12/06/how-salesforce-brings-a-better-customer-experience-to-healthcare/",
+        },
+        Object {
+          "labels": Array [
+            "Ajay Kumar Omer",
+            "Creating an engaging conversational interface for a successful bot adoption",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/2019/01/03/creating-an-engaging-conversational-interface-for-a-successful-bot-adoption/",
+        },
+        Object {
+          "labels": Array [
+            "Ayano Yamamoto",
+            "Hiring for Mindset",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/2019/02/04/hiring-for-mindset/",
+        },
+        Object {
+          "labels": Array [
+            "Designit",
+            "Scriptwriting for Voice UI",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/2019/01/10/scriptwriting-for-voice-ui/",
+        },
+        Object {
+          "labels": Array [
+            "Insights by Andy Coghlan",
+            "Turning data into consumer growth",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/2018/08/09/turning-data-into-consumer-growth/",
+        },
+        Object {
+          "labels": Array [
+            "Insights by Zubin Limbuvala",
+            "Three ways to navigate your data science journey",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/2018/10/04/three-ways-to-navigate-your-data-science-journey/",
+        },
+        Object {
+          "labels": Array [
+            "Cases",
+            "A design system to enable future growth",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/cases/a-design-system-to-enable-future-growth/",
+        },
+        Object {
+          "labels": Array [
+            "Cases",
+            "Thames Water: A strategic move into Predictive planning",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/cases/progressive-metering-a-utilitys-strategic-move-into-predictive-planning/",
+        },
+        Object {
+          "labels": Array [
+            "Cases",
+            "VoluSense: Redefining newborn care",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/case-study-redefining-newborn-care-for-volusense/",
+        },
+        Object {
+          "labels": Array [
+            "Cases",
+            "Call Me: Speaking from the heart",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/cases/case-study-speaking-from-the-heart/",
+        },
+        Object {
+          "labels": Array [
+            "Cases",
+            "In24",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/cases/in24/",
+        },
+        Object {
+          "labels": Array [
+            "Events",
+            "Nate Clinton, Managing Director, Designit at SF Design Week 2018",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/events/nate-clinton-managing-director-cooper-at-sf-design-week-2018/",
+        },
+        Object {
+          "labels": Array [
+            "Events",
+            "Meet Wipro Digital at PEGA Customer Engagement Summit 2018",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/events/meet-wipro-digital-at-pega-customer-engagement-summit-2018/",
+        },
+        Object {
+          "labels": Array [
+            "Events",
+            "Join Wipro for two IoT panels at World Economic Forum (WEF)",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/events/join-wipro-digital-for-two-iot-panels-at-world-economic-forum-wef/",
+        },
+        Object {
+          "labels": Array [
+            "Events",
+            "Wipro Digital & Designit at IDC European Digital Executive Summit 2018",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/events/wipro-digital-designit-at-idc-european-digital-executive-summit-2018/",
+        },
+        Object {
+          "labels": Array [
+            "Events",
+            "Wipro Digital is a platinum sponsor at Pivotal’s SpringOne Platform 2018",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/events/wipro-digital-is-a-platinum-sponsor-at-springone-platform-2018/",
+        },
+        Object {
+          "labels": Array [
+            "Events",
+            "Teresa Brazen, Senior Director, Cooper at Design Thinking 2018",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/events/teresa-brazen-senior-director-cooper-at-design-thinking-2018/",
+        },
+        Object {
+          "labels": Array [
+            "News",
+            "New MarTech study shows marketers may be overestimating ability to execute and deliver results from their investments",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/news/the-state-of-martech-study/",
+        },
+        Object {
+          "labels": Array [
+            "News",
+            "Wipro Rated a Leader in Digital Transformation in ITSMA Report",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/news/wipro-rated-a-leader-in-digital-transformation-in-itsma-report/",
+        },
+        Object {
+          "labels": Array [
+            "News",
+            "Wipro Digital to acquire Cooper, a leader in UX and interaction design, & expand Designit’s capabilities",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/news/wipro-digital-acquire-cooper-leader-ux-interaction-design-expand-designits-capabilities/",
+        },
+        Object {
+          "labels": Array [
+            "News",
+            "Wipro Named global leader in Digital Transformation Strategy and Consulting",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/news/wipro-named-global-leader-digital-transformation-strategy-consulting/",
+        },
+        Object {
+          "labels": Array [
+            "News",
+            "New survey highlights leadership crisis in Digital Transformation",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/news/new-survey-highlights-leadership-crisis-digital-transformation/",
+        },
+        Object {
+          "labels": Array [
+            "News",
+            "PAC's European Trend Study: Digital industrial revolution with Predictive Maintenance",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/news/pacs-european-trend-study-digital-industrial-revolution-with-predictive-maintenance/",
+        },
+        Object {
+          "labels": Array [
+            "Designit",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/designit-approach/",
+        },
+        Object {
+          "labels": Array [
+            "Designit",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/designit-approach",
+        },
+        Object {
+          "labels": Array [
+            "Privacy policy",
+          ],
+          "links": Array [],
+          "parent": "https://wiprodigital.com/",
+          "url": "https://wiprodigital.com/privacy-policy",
+        },
+      ],
+      "url": "https://wiprodigital.com/",
+    },
+  ],
+}
+`;

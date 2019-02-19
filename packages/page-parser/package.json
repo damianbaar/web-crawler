@@ -1,11 +1,12 @@
 {
   "name": "page-parser",
-  "main": "src/index.ts",
+  "main": "./src/index.ts",
   "version": "0.1.0",
   "description": "Traverse HTML and follow <a href/> attributes",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0",
+    "un-flatten-tree": "^2.0.12",
     "node-html-parser": "^1.1.12",
     "p-map": "^2.0.0",
     "fp-ts": "^1.13.0"
