@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`testing real page 1`] = `
+exports[`test w3 page 1`] = `
 Object {
   "https://www.w3schools.com/": Array [
     Object {

@@ -27,6 +27,7 @@ Simple webcrawler which follow the links `<a href>'s` within the same domain.
 Just append at the end `--watch` param
 
 ### ... deploy
+* first familiarize with [sls deploy](https://serverless.com/framework/docs/providers/aws/guide/deploying/)
 
 #### Setup
 

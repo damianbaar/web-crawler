@@ -60,7 +60,7 @@ export const getAnchors =
 export const anchorsToTuple =
   (html: HTMLElement[]) =>
     html.map(d => ({
-      labels: getTextFromNode(d.childNodes),
+      labels: getTextFromNode(d.childNodes).filter(Boolean),
       url: d.attributes.href
     }) as AnchorDescriptor)
 
@@ -76,11 +76,18 @@ export const parseAnchors = pipe(
   skipDuplicates
 )
 
+const isURLRelative =
+  (urlString: string) =>
+    !(urlString.indexOf('http://') === 0 || urlString.indexOf('https://') === 0)
+
 export const filterOutLinksOutsideDomain =
   ({ hostname }: UrlWithStringQuery) =>
     (hrefs: AnchorDescriptor[]) =>
       hrefs.filter(({ url }) =>
-        hostname === parseURL(url).hostname)
+        url
+          ? (hostname === parseURL(url).hostname || isURLRelative(url))
+          : false
+      )
 
 const withFiltering = pipe(
   parseURL,

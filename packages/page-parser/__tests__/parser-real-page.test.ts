@@ -1,17 +1,12 @@
 import {
-  parseHTML,
-  getTextFromNode,
+  printSiteMap,
   getURLsFromPage,
-  parseAnchors,
-  traversePage,
-  drawTree,
-  printSiteMap
 } from '../src/page-parser'
 
-jest.setTimeout(100000)
+jest.setTimeout(30000)
 
 test('testing real page', () => {
-  const baseURL = 'https://wiprodigital.com/'
+  const baseURL = 'https://www.w3schools.com/'
 
   return printSiteMap(baseURL)
     .then(result => expect(result).toMatchSnapshot())
