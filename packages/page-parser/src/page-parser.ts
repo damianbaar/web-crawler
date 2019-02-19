@@ -3,8 +3,8 @@ import { parse, Node, HTMLElement, NodeType } from 'node-html-parser'
 import { uniq } from 'fp-ts/lib/Array'
 import { ordString } from 'fp-ts/lib/Ord'
 import { contramap } from 'fp-ts/lib/Setoid'
-import { pipe, identity, not } from 'fp-ts/lib/function'
-import { parse as parseURL, UrlWithStringQuery } from 'url'
+import { pipe } from 'fp-ts/lib/function'
+import { parse as parseURL, resolve, UrlWithStringQuery } from 'url'
 import { unflatten } from 'un-flatten-tree'
 import pMap from 'p-map'
 
@@ -91,10 +91,10 @@ export const filterOutLinksOutsideDomain =
   ({ hostname }: UrlWithStringQuery) =>
     (url: string) =>
       url
-        ? (hostname === parseURL(url).hostname || isURLRelative(url))
+        ? hostname === parseURL(url).hostname
         : false
 
-const withFiltering = pipe(
+const shouldFollow = pipe(
   parseURL,
   filterOutLinksOutsideDomain
 )
@@ -113,10 +113,10 @@ export const getURLsFromPage =
 
 type Tree = Record<string, AnchorDescriptor>
 
-const checkIfShouldSkip =
+const skipPending =
   (tree: Tree, baseURL: string) =>
-    ({ url, error }: AnchorDescriptor) =>
-      !!(tree[url] || error || url === baseURL)
+    ({ url }: AnchorDescriptor) =>
+      !(tree[url] || url === baseURL)
 
 interface TraverseOptions {
   concurrency: number
@@ -127,25 +127,37 @@ const doEffect = <P>(effect: (val: P) => void) => (result: P) => {
   return result
 }
 
+// TODO - url relative resolution
+// 1) #sth
+// 2) /sth
+const relativeToFullPath =
+  (baseUrl: string) =>
+    (desc: AnchorDescriptor) => ({
+      ...desc,
+      url: desc.url && isURLRelative(desc.url) ? resolve(baseUrl, desc.url) : desc.url
+    } as AnchorDescriptor)
+
 // better would be to go with monad transformer -> StateTaskEither
 export const traversePage =
   (baseURL: string, options: TraverseOptions = { concurrency: 20 }, tree: Tree = {}): Promise<Tree> =>
     getURLsFromPage(baseURL)
       .then(doEffect((links) => { tree[baseURL] = { ...tree[baseURL], links, url: baseURL } }))
-      .then(hrefs => hrefs.filter(not(checkIfShouldSkip(tree, baseURL))))
-      .then(hrefs =>
-        hrefs
-          .map(doEffect((link) => {
-            tree[link.url] = {
-              ...tree[link.url],
-              ...link,
-              parent: baseURL,
-            } as AnchorDescriptor
-          }))
+      .then(hrefs => hrefs.filter(skipPending(tree, baseURL)))
+      // TODO
+      // .then(hrefs => hrefs.map(relativeToFullPath(baseURL)))
+      .then(hrefs => hrefs.map(
+        doEffect((link) => {
+          tree[link.url] = {
+            ...tree[link.url],
+            ...link,
+            parent: baseURL,
+          } as AnchorDescriptor
+        }))
       )
       .then(hrefs => hrefs
+        .filter(({ error }) => !error)
         .map(({ url }) => url)
-        .filter(withFiltering(baseURL))
+        .filter(shouldFollow(baseURL))
       )
       .then(pagesToTraverse =>
         pMap(pagesToTraverse, link =>

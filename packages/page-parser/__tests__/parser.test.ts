@@ -120,7 +120,7 @@ const siteMap: Record<string, string> = {
   '/pageG': pageG(dummyBaseURL)
 }
 
-test.only('traverse dummy page', () => {
+test('traverse dummy page', () => {
   // @ts-ignore
   mockAxios.get.mockImplementation(url => {
     const { path } = parseURL(url)

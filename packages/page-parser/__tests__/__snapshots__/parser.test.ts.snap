@@ -53,6 +53,12 @@ Object {
               "parent": "https://my-super-cool-domain.com/pageC",
               "url": "https://my-super-cool-domain.com/pageF",
             },
+            Object {
+              "labels": "some img label",
+              "links": Array [],
+              "parent": "https://my-super-cool-domain.com/pageC",
+              "url": "http://some_awesome_pictures.com",
+            },
           ],
           "parent": "https://my-super-cool-domain.com/pageA",
           "url": "https://my-super-cool-domain.com/pageC",
@@ -64,6 +70,31 @@ Object {
           "links": Array [],
           "parent": "https://my-super-cool-domain.com/pageA",
           "url": "https://my-super-cool-domain.com/pageD",
+        },
+        Object {
+          "labels": Array [
+            "Case studies",
+          ],
+          "links": Array [],
+          "parent": "https://my-super-cool-domain.com/pageA",
+          "url": "https://wiprodigital.com/what-we-do#wdwork_cases",
+        },
+        Object {
+          "labels": Array [
+            "Case Study",
+            "Delivering an exceptional mortgage customer experience for Allied Irish Bank",
+          ],
+          "links": Array [],
+          "parent": "https://my-super-cool-domain.com/pageA",
+          "url": "https://wiprodigital.com/cases/delivering-an-exceptional-mortgage-customer-experience-for-allied-irish-bank/",
+        },
+        Object {
+          "labels": Array [
+            "some other domain",
+          ],
+          "links": Array [],
+          "parent": "https://my-super-cool-domain.com/pageA",
+          "url": "https://some-other-domain",
         },
       ],
       "url": "https://my-super-cool-domain.com/pageA",
