@@ -3,9 +3,9 @@
 Simple webcrawler which follow the links `<a href>'s` within the same domain.
 
 ### Parts / Structure
-- `page-parser` - getting source of html and following the link within it
-- `web-crawler-lambda` - lambda service with embeded `page-parser`
-- `web-crawler-ui` - basic user interface for `web-crawler` - #TODO
+- [`page-parser`](https://github.com/damianbaar/web-crawler/tree/master/packages/page-parser) - getting source of html and following the links page
+- [`web-crawler-lambda`](https://github.com/damianbaar/web-crawler/tree/master/packages/web-crawler-lambda) - lambda service with embeded `page-parser`
+- [`web-crawler-ui`](https://github.com/damianbaar/web-crawler/tree/master/packages/web-crawler-ui) - basic user interface for `web-crawler` - #TODO
 
 ### How to ...
 

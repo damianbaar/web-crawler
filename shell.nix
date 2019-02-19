@@ -11,10 +11,6 @@ let
     export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
     export ROOT_PROJECT_FOLDER=$PWD
   '';
-
-  runScript = pkgs.writeShellScriptBin "run-ts-script" ''
-    node --require @hungry/babel-preset-cli/register $1
-  '';
 in
 stdenv.mkDerivation rec {
     name = "dev-env";
@@ -23,8 +19,6 @@ stdenv.mkDerivation rec {
     buildInputs = [
       # init
       initEnv
-      # helpers
-      runScript
 
       # deps
       awscli
