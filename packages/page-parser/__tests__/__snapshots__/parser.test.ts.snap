@@ -1,70 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`get all urls from page with domain filtering 1`] = `
-Array [
-  Object {
-    "labels": Array [
-      "Page B",
-    ],
-    "url": "https://my-super-cool-domain.com/pageB",
-  },
-  Object {
-    "labels": Array [
-      "Page C",
-    ],
-    "url": "https://my-super-cool-domain.com/pageC",
-  },
-  Object {
-    "labels": Array [
-      "Page D",
-    ],
-    "url": "https://my-super-cool-domain.com/pageD",
-  },
-]
-`;
-
-exports[`get all urls from page without domain filtering 1`] = `
-Array [
-  Object {
-    "labels": Array [
-      "Page B",
-    ],
-    "url": "https://my-super-cool-domain.com/pageB",
-  },
-  Object {
-    "labels": Array [
-      "Page C",
-    ],
-    "url": "https://my-super-cool-domain.com/pageC",
-  },
-  Object {
-    "labels": Array [
-      "Page D",
-    ],
-    "url": "https://my-super-cool-domain.com/pageD",
-  },
-  Object {
-    "labels": Array [
-      "Case studies",
-    ],
-    "url": "https://wiprodigital.com/what-we-do#wdwork_cases",
-  },
-  Object {
-    "labels": Array [
-      "Case Study",
-      "Delivering an exceptional mortgage customer experience for Allied Irish Bank",
-    ],
-    "url": "https://wiprodigital.com/cases/delivering-an-exceptional-mortgage-customer-experience-for-allied-irish-bank/",
-  },
-  Object {
-    "labels": Array [
-      "some other domain",
-    ],
-    "url": "https://some-other-domain",
-  },
-]
-`;
-
 exports[`print sitemap 1`] = `
 Object {
   "https://my-super-cool-domain.com/pageA": Array [
@@ -159,6 +94,11 @@ Object {
 
 exports[`traverse dummy page 1`] = `
 Object {
+  "http://some_awesome_pictures.com": Object {
+    "labels": "some img label",
+    "parent": "https://my-super-cool-domain.com/pageC",
+    "url": "http://some_awesome_pictures.com",
+  },
   "https://my-super-cool-domain.com/pageA": Object {
     "links": Array [
       Object {
@@ -178,6 +118,25 @@ Object {
           "Page D",
         ],
         "url": "https://my-super-cool-domain.com/pageD",
+      },
+      Object {
+        "labels": Array [
+          "Case studies",
+        ],
+        "url": "https://wiprodigital.com/what-we-do#wdwork_cases",
+      },
+      Object {
+        "labels": Array [
+          "Case Study",
+          "Delivering an exceptional mortgage customer experience for Allied Irish Bank",
+        ],
+        "url": "https://wiprodigital.com/cases/delivering-an-exceptional-mortgage-customer-experience-for-allied-irish-bank/",
+      },
+      Object {
+        "labels": Array [
+          "some other domain",
+        ],
+        "url": "https://some-other-domain",
       },
     ],
     "url": "https://my-super-cool-domain.com/pageA",
@@ -219,6 +178,10 @@ Object {
           "Page F",
         ],
         "url": "https://my-super-cool-domain.com/pageF",
+      },
+      Object {
+        "labels": "some img label",
+        "url": "http://some_awesome_pictures.com",
       },
     ],
     "parent": "https://my-super-cool-domain.com/pageA",
@@ -277,6 +240,28 @@ Object {
     "links": Array [],
     "parent": "https://my-super-cool-domain.com/pageG",
     "url": "https://my-super-cool-domain.com/pageX",
+  },
+  "https://some-other-domain": Object {
+    "labels": Array [
+      "some other domain",
+    ],
+    "parent": "https://my-super-cool-domain.com/pageA",
+    "url": "https://some-other-domain",
+  },
+  "https://wiprodigital.com/cases/delivering-an-exceptional-mortgage-customer-experience-for-allied-irish-bank/": Object {
+    "labels": Array [
+      "Case Study",
+      "Delivering an exceptional mortgage customer experience for Allied Irish Bank",
+    ],
+    "parent": "https://my-super-cool-domain.com/pageA",
+    "url": "https://wiprodigital.com/cases/delivering-an-exceptional-mortgage-customer-experience-for-allied-irish-bank/",
+  },
+  "https://wiprodigital.com/what-we-do#wdwork_cases": Object {
+    "labels": Array [
+      "Case studies",
+    ],
+    "parent": "https://my-super-cool-domain.com/pageA",
+    "url": "https://wiprodigital.com/what-we-do#wdwork_cases",
   },
 }
 `;

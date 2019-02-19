@@ -94,6 +94,7 @@ const pageB = (baseURL: string) => `
 const pageC = (baseURL: string) => `
   <html>
   <a href="${baseURL}/pageF">Page F</a>
+  <img src="http://some_awesome_pictures.com" alt="some img label" />
   </html>
 `
 
@@ -119,31 +120,7 @@ const siteMap: Record<string, string> = {
   '/pageG': pageG(dummyBaseURL)
 }
 
-test('get all urls from page without domain filtering', () => {
-  // @ts-ignore
-  mockAxios.get.mockImplementationOnce(url => {
-    const { path } = parseURL(url)
-    return Promise.resolve({ data: siteMap[path as string] })
-  })
-
-  return getURLsFromPage('https://my-super-cool-domain.com/pageA', false)
-    .then(result => expect(result).toMatchSnapshot())
-    .catch(() => fail())
-})
-
-test('get all urls from page with domain filtering', () => {
-  // @ts-ignore
-  mockAxios.get.mockImplementationOnce(url => {
-    const { path } = parseURL(url)
-    return Promise.resolve({ data: siteMap[path as string] })
-  })
-
-  return getURLsFromPage('https://my-super-cool-domain.com/pageA', true)
-    .then(result => expect(result).toMatchSnapshot())
-    .catch(() => fail())
-})
-
-test('traverse dummy page', () => {
+test.only('traverse dummy page', () => {
   // @ts-ignore
   mockAxios.get.mockImplementation(url => {
     const { path } = parseURL(url)

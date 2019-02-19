@@ -5,6 +5,7 @@ import { ordString } from 'fp-ts/lib/Ord'
 import { contramap } from 'fp-ts/lib/Setoid'
 import { pipe, identity, not } from 'fp-ts/lib/function'
 import { parse as parseURL, UrlWithStringQuery } from 'url'
+import { unflatten } from 'un-flatten-tree'
 import pMap from 'p-map'
 
 type Labels = [string, string]
@@ -31,12 +32,14 @@ export const isTextNode =
 
 export const mergeChildNodes =
   (nodes: Node[]) =>
-    nodes.map(a => a.childNodes)
+    nodes
+      .map(a => a.childNodes)
       .reduce((acc, next) => [...acc, ...next], [])
 
 export const getOnlyTextNodes =
   (nodes: Node[]) =>
-    nodes.filter(isTextNode)
+    nodes
+      .filter(isTextNode)
       .map(trimText)
       .filter(Boolean)
 
@@ -55,14 +58,18 @@ export const parseHTML =
 
 export const getAnchors =
   (html: HTMLElement) =>
-    html.querySelectorAll('a')
+    html
+      .querySelectorAll('a')
+      .concat(
+        html.querySelectorAll('img'))
 
-export const anchorsToTuple =
+// should be more robust and extensible
+export const anchorToDescriptor =
   (html: HTMLElement[]) =>
     html.map(d => ({
-      labels: getTextFromNode(d.childNodes).filter(Boolean),
-      url: d.attributes.href
-    }) as AnchorDescriptor)
+      labels: d.attributes.alt || getTextFromNode(d.childNodes).filter(Boolean),
+      url: d.attributes.href || d.attributes.src
+    } as AnchorDescriptor))
 
 const urlSetoid =
   contramap(({ url }: AnchorDescriptor) => url, ordString)
@@ -72,7 +79,7 @@ export const skipDuplicates = uniq(urlSetoid)
 export const parseAnchors = pipe(
   parseHTML,
   getAnchors,
-  anchorsToTuple,
+  anchorToDescriptor,
   skipDuplicates
 )
 
@@ -82,12 +89,10 @@ const isURLRelative =
 
 export const filterOutLinksOutsideDomain =
   ({ hostname }: UrlWithStringQuery) =>
-    (hrefs: AnchorDescriptor[]) =>
-      hrefs.filter(({ url }) =>
-        url
-          ? (hostname === parseURL(url).hostname || isURLRelative(url))
-          : false
-      )
+    (url: string) =>
+      url
+        ? (hostname === parseURL(url).hostname || isURLRelative(url))
+        : false
 
 const withFiltering = pipe(
   parseURL,
@@ -95,17 +100,12 @@ const withFiltering = pipe(
 )
 
 export const getURLsFromPage =
-  (baseURL: string, withDomainFiltering: boolean = true): Promise<AnchorDescriptor[]> =>
+  (baseURL: string): Promise<AnchorDescriptor[]> =>
     axios
       .get(baseURL)
-      .then(d =>
-        Promise
-          .resolve(parseAnchors(d.data))
-          .then(withDomainFiltering
-            ? withFiltering(baseURL)
-            : identity
-          )
-        , error =>
+      .then(
+        result => parseAnchors(result.data),
+        error =>
           ((error.response && error.response.status === 404
             ? [{ error: error.response.status, url: baseURL, links: [] }]
             : [{ error: 'unknown error', url: baseURL, links: [] }] as unknown) as AnchorDescriptor[])
@@ -141,15 +141,17 @@ export const traversePage =
               ...link,
               parent: baseURL,
             } as AnchorDescriptor
-          })))
-      .then(hrefs => hrefs.map(({ url }) => url))
+          }))
+      )
+      .then(hrefs => hrefs
+        .map(({ url }) => url)
+        .filter(withFiltering(baseURL))
+      )
       .then(pagesToTraverse =>
         pMap(pagesToTraverse, link =>
           traversePage(link, options, tree), options)
       )
       .then(_ => tree)
-
-import { unflatten } from 'un-flatten-tree'
 
 export const drawTree =
   (root: URL) =>

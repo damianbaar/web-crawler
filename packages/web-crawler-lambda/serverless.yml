@@ -30,4 +30,3 @@ custom:
 package:
   exclude:
     - node_modules/serverless-offline/**
-  # individually: true
