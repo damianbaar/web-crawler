@@ -1,0 +1,1286 @@
+{
+  "https://wiprodigital.com": [
+    {
+      "links": [
+        {
+          "labels": [
+            "Who we are"
+          ],
+          "url": "https://wiprodigital.com/who-we-are",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Our story"
+          ],
+          "url": "https://wiprodigital.com/who-we-are/#wdteam-vid",
+          "parent": "https://wiprodigital.com",
+          "links": [
+            {
+              "labels": [
+                "Who we are"
+              ],
+              "url": "#masthead",
+              "parent": "https://wiprodigital.com/who-we-are/#wdteam-vid",
+              "links": []
+            },
+            {
+              "labels": [
+                "Our story"
+              ],
+              "url": "#wdteam-vid",
+              "parent": "https://wiprodigital.com/who-we-are/#wdteam-vid",
+              "links": []
+            },
+            {
+              "labels": [
+                "Meet us"
+              ],
+              "url": "#wdteam_meetus",
+              "parent": "https://wiprodigital.com/who-we-are/#wdteam-vid",
+              "links": []
+            },
+            {
+              "labels": [
+                "Leaders"
+              ],
+              "url": "#wdteam_leaders",
+              "parent": "https://wiprodigital.com/who-we-are/#wdteam-vid",
+              "links": []
+            }
+          ]
+        },
+        {
+          "labels": [
+            "Meet us"
+          ],
+          "url": "https://wiprodigital.com/who-we-are#wdteam_meetus",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Leaders"
+          ],
+          "url": "https://wiprodigital.com/who-we-are#wdteam_leaders",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "What we do"
+          ],
+          "url": "https://wiprodigital.com/what-we-do",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Services"
+          ],
+          "url": "https://wiprodigital.com/what-we-do#work-three-circles-row",
+          "parent": "https://wiprodigital.com",
+          "links": [
+            {
+              "labels": [
+                "Services"
+              ],
+              "url": "#work-three-circles-row",
+              "parent": "https://wiprodigital.com/what-we-do#work-three-circles-row",
+              "links": []
+            },
+            {
+              "labels": [
+                "Case studies"
+              ],
+              "url": "#wdwork_cases",
+              "parent": "https://wiprodigital.com/what-we-do#work-three-circles-row",
+              "links": []
+            },
+            {
+              "labels": [
+                "Partners"
+              ],
+              "url": "#wdwork_partners",
+              "parent": "https://wiprodigital.com/what-we-do#work-three-circles-row",
+              "links": []
+            },
+            {
+              "labels": [
+                "cases",
+                "in24 Bankside"
+              ],
+              "url": "https://wiprodigital.com/",
+              "parent": "https://wiprodigital.com/what-we-do#work-three-circles-row",
+              "links": []
+            },
+            {
+              "labels": [
+                "Cases",
+                "in24: bankside"
+              ],
+              "url": "https://wiprodigital.com/cases/in24-bankside/",
+              "parent": "https://wiprodigital.com/what-we-do#work-three-circles-row",
+              "links": []
+            },
+            {
+              "labels": [
+                "Cases",
+                "in24: insure"
+              ],
+              "url": "https://wiprodigital.com/cases/in24-insure/",
+              "parent": "https://wiprodigital.com/what-we-do#work-three-circles-row",
+              "links": []
+            },
+            {
+              "labels": [
+                "Cases",
+                "DX: A Case Study of Technological Intervention"
+              ],
+              "url": "https://wiprodigital.com/cases/digital-transformation-a-case-study-of-technological-intervention/",
+              "parent": "https://wiprodigital.com/what-we-do#work-three-circles-row",
+              "links": []
+            },
+            {
+              "labels": [
+                "Cases",
+                "Introducing AWS to a Large FS Organisation"
+              ],
+              "url": "https://wiprodigital.com/2017/02/21/whitepaper-introducing-aws-to-a-large-fs-organisation/",
+              "parent": "https://wiprodigital.com/what-we-do#work-three-circles-row",
+              "links": [
+                {
+                  "labels": [
+                    "Amazon Web Services"
+                  ],
+                  "url": "https://wiprodigital.com/tag/amazon-web-services/",
+                  "parent": "https://wiprodigital.com/2017/02/21/whitepaper-introducing-aws-to-a-large-fs-organisation/",
+                  "links": []
+                },
+                {
+                  "labels": [
+                    "AWS"
+                  ],
+                  "url": "https://wiprodigital.com/tag/aws/",
+                  "parent": "https://wiprodigital.com/2017/02/21/whitepaper-introducing-aws-to-a-large-fs-organisation/",
+                  "links": []
+                },
+                {
+                  "labels": [
+                    "banking"
+                  ],
+                  "url": "https://wiprodigital.com/tag/banking/",
+                  "parent": "https://wiprodigital.com/2017/02/21/whitepaper-introducing-aws-to-a-large-fs-organisation/",
+                  "links": []
+                },
+                {
+                  "labels": [
+                    "Buildit@WiproDigital"
+                  ],
+                  "url": "https://wiprodigital.com/tag/builditwiprodigital/",
+                  "parent": "https://wiprodigital.com/2017/02/21/whitepaper-introducing-aws-to-a-large-fs-organisation/",
+                  "links": []
+                },
+                {
+                  "labels": [
+                    "finance"
+                  ],
+                  "url": "https://wiprodigital.com/tag/finance/",
+                  "parent": "https://wiprodigital.com/2017/02/21/whitepaper-introducing-aws-to-a-large-fs-organisation/",
+                  "links": []
+                },
+                {
+                  "labels": [
+                    "Retail"
+                  ],
+                  "url": "https://wiprodigital.com/tag/retail/",
+                  "parent": "https://wiprodigital.com/2017/02/21/whitepaper-introducing-aws-to-a-large-fs-organisation/",
+                  "links": []
+                },
+                {
+                  "labels": [
+                    "wealth management"
+                  ],
+                  "url": "https://wiprodigital.com/tag/wealth-management/",
+                  "parent": "https://wiprodigital.com/2017/02/21/whitepaper-introducing-aws-to-a-large-fs-organisation/",
+                  "links": []
+                },
+                {
+                  "labels": [
+                    "Whitepaper"
+                  ],
+                  "url": "https://wiprodigital.com/tag/whitepaper/",
+                  "parent": "https://wiprodigital.com/2017/02/21/whitepaper-introducing-aws-to-a-large-fs-organisation/",
+                  "links": []
+                },
+                {
+                  "labels": [
+                    "Prescriptive Maintenance – The Future of Asset Management"
+                  ],
+                  "url": "https://wiprodigital.com/2018/09/17/prescriptive-maintenance-the-future-of-asset-management/",
+                  "parent": "https://wiprodigital.com/2017/02/21/whitepaper-introducing-aws-to-a-large-fs-organisation/",
+                  "links": []
+                },
+                {
+                  "labels": [
+                    "Rethinking Service Blueprints for Agile Delivery"
+                  ],
+                  "url": "https://wiprodigital.com/2018/08/30/rethinking-service-blueprints-for-agile-delivery/",
+                  "parent": "https://wiprodigital.com/2017/02/21/whitepaper-introducing-aws-to-a-large-fs-organisation/",
+                  "links": []
+                }
+              ]
+            },
+            {
+              "labels": [
+                "cannot_determine_label"
+              ],
+              "url": "https://wiprodigital.com/partners/adobe/",
+              "parent": "https://wiprodigital.com/what-we-do#work-three-circles-row",
+              "links": []
+            },
+            {
+              "labels": [
+                "cannot_determine_label"
+              ],
+              "url": "https://wiprodigital.com/partners/apporbit/",
+              "parent": "https://wiprodigital.com/what-we-do#work-three-circles-row",
+              "links": []
+            },
+            {
+              "labels": [
+                "cannot_determine_label"
+              ],
+              "url": "https://wiprodigital.com/partners/aws/",
+              "parent": "https://wiprodigital.com/what-we-do#work-three-circles-row",
+              "links": []
+            },
+            {
+              "labels": [
+                "cannot_determine_label"
+              ],
+              "url": "https://wiprodigital.com/partners/biz2credit/",
+              "parent": "https://wiprodigital.com/what-we-do#work-three-circles-row",
+              "links": []
+            },
+            {
+              "labels": [
+                "cannot_determine_label"
+              ],
+              "url": "https://wiprodigital.com/partners/cisco/",
+              "parent": "https://wiprodigital.com/what-we-do#work-three-circles-row",
+              "links": []
+            },
+            {
+              "labels": [
+                "cannot_determine_label"
+              ],
+              "url": "https://wiprodigital.com/partners/datastax/",
+              "parent": "https://wiprodigital.com/what-we-do#work-three-circles-row",
+              "links": []
+            },
+            {
+              "labels": [
+                "cannot_determine_label"
+              ],
+              "url": "https://wiprodigital.com/partners/episerver/",
+              "parent": "https://wiprodigital.com/what-we-do#work-three-circles-row",
+              "links": []
+            },
+            {
+              "labels": [
+                "cannot_determine_label"
+              ],
+              "url": "https://wiprodigital.com/partners/maxicaster/",
+              "parent": "https://wiprodigital.com/what-we-do#work-three-circles-row",
+              "links": []
+            },
+            {
+              "labels": [
+                "cannot_determine_label"
+              ],
+              "url": "https://wiprodigital.com/partners/microsoft/",
+              "parent": "https://wiprodigital.com/what-we-do#work-three-circles-row",
+              "links": []
+            },
+            {
+              "labels": [
+                "cannot_determine_label"
+              ],
+              "url": "https://wiprodigital.com/partners/pivotal-software/",
+              "parent": "https://wiprodigital.com/what-we-do#work-three-circles-row",
+              "links": []
+            },
+            {
+              "labels": [
+                "cannot_determine_label"
+              ],
+              "url": "https://wiprodigital.com/partners/xebia-labs/",
+              "parent": "https://wiprodigital.com/what-we-do#work-three-circles-row",
+              "links": []
+            }
+          ]
+        },
+        {
+          "labels": [
+            "Case studies"
+          ],
+          "url": "https://wiprodigital.com/what-we-do#wdwork_cases",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Partners"
+          ],
+          "url": "https://wiprodigital.com/what-we-do#wdwork_partners",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "What we think"
+          ],
+          "url": "https://wiprodigital.com/what-we-think",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Insights"
+          ],
+          "url": "https://wiprodigital.com/?s=&post_type[]=post",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Cases"
+          ],
+          "url": "https://wiprodigital.com/?s=&post_type[]=cases",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Events"
+          ],
+          "url": "https://wiprodigital.com/?s=&post_type[]=events",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "News"
+          ],
+          "url": "https://wiprodigital.com/?s=&post_type[]=news",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Join our team"
+          ],
+          "url": "https://wiprodigital.com/join-our-team",
+          "parent": "https://wiprodigital.com",
+          "links": [
+            {
+              "labels": [
+                "Better together"
+              ],
+              "url": "#wdwork-vid",
+              "parent": "https://wiprodigital.com/join-our-team",
+              "links": []
+            },
+            {
+              "labels": [
+                "Our teams"
+              ],
+              "url": "#wdcareers_team",
+              "parent": "https://wiprodigital.com/join-our-team",
+              "links": []
+            },
+            {
+              "labels": [
+                "Open positions"
+              ],
+              "url": "#wdcareers_jobs",
+              "parent": "https://wiprodigital.com/join-our-team",
+              "links": []
+            }
+          ]
+        },
+        {
+          "labels": [
+            "Better together"
+          ],
+          "url": "https://wiprodigital.com/join-our-team#wdwork-vid",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Our teams"
+          ],
+          "url": "https://wiprodigital.com/join-our-team#wdcareers_team",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Open positions"
+          ],
+          "url": "https://wiprodigital.com/join-our-team#wdcareers_jobs",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Get in touch"
+          ],
+          "url": "https://wiprodigital.com/get-in-touch",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Locations"
+          ],
+          "url": "https://wiprodigital.com/get-in-touch#wddi-locations",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Contact us"
+          ],
+          "url": "https://wiprodigital.com/get-in-touch#wddi-contact",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "All"
+          ],
+          "url": "#AllcontntAggr",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Insights"
+          ],
+          "url": "#InscontntAggr",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Cases"
+          ],
+          "url": "#CascontntAggr",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Events"
+          ],
+          "url": "#EvtcontntAggr",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "News"
+          ],
+          "url": "#NewcontntAggr",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Case Study",
+            "Delivering an exceptional mortgage customer experience for Allied Irish Bank"
+          ],
+          "url": "https://wiprodigital.com/cases/delivering-an-exceptional-mortgage-customer-experience-for-allied-irish-bank/",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Phil Hall",
+            "The meaning of motion"
+          ],
+          "url": "https://wiprodigital.com/2018/11/20/the-meaning-of-motion/",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Todd Murphy",
+            "How Salesforce brings a better Customer Experience to Healthcare"
+          ],
+          "url": "https://wiprodigital.com/2018/12/06/how-salesforce-brings-a-better-customer-experience-to-healthcare/",
+          "parent": "https://wiprodigital.com",
+          "links": [
+            {
+              "labels": [
+                "appirio"
+              ],
+              "url": "https://wiprodigital.com/tag/appirio/",
+              "parent": "https://wiprodigital.com/2018/12/06/how-salesforce-brings-a-better-customer-experience-to-healthcare/",
+              "links": []
+            },
+            {
+              "labels": [
+                "Customer Experience"
+              ],
+              "url": "https://wiprodigital.com/tag/customer-experience/",
+              "parent": "https://wiprodigital.com/2018/12/06/how-salesforce-brings-a-better-customer-experience-to-healthcare/",
+              "links": []
+            },
+            {
+              "labels": [
+                "CX"
+              ],
+              "url": "https://wiprodigital.com/tag/cx/",
+              "parent": "https://wiprodigital.com/2018/12/06/how-salesforce-brings-a-better-customer-experience-to-healthcare/",
+              "links": []
+            },
+            {
+              "labels": [
+                "Digital Transformation"
+              ],
+              "url": "https://wiprodigital.com/tag/digital-transformation/",
+              "parent": "https://wiprodigital.com/2018/12/06/how-salesforce-brings-a-better-customer-experience-to-healthcare/",
+              "links": []
+            },
+            {
+              "labels": [
+                "Health Cloud"
+              ],
+              "url": "https://wiprodigital.com/tag/health-cloud/",
+              "parent": "https://wiprodigital.com/2018/12/06/how-salesforce-brings-a-better-customer-experience-to-healthcare/",
+              "links": []
+            },
+            {
+              "labels": [
+                "healthcare"
+              ],
+              "url": "https://wiprodigital.com/tag/healthcare/",
+              "parent": "https://wiprodigital.com/2018/12/06/how-salesforce-brings-a-better-customer-experience-to-healthcare/",
+              "links": []
+            },
+            {
+              "labels": [
+                "Patients"
+              ],
+              "url": "https://wiprodigital.com/tag/patients/",
+              "parent": "https://wiprodigital.com/2018/12/06/how-salesforce-brings-a-better-customer-experience-to-healthcare/",
+              "links": []
+            },
+            {
+              "labels": [
+                "5 Critical “Must Have” Strategies for a Best-in-Class Customer Experience Using Intelligent Process Automation"
+              ],
+              "url": "https://wiprodigital.com/2018/10/10/how-to-drive-effective-digital-strategy-with-intelligent-process-automation/",
+              "parent": "https://wiprodigital.com/2018/12/06/how-salesforce-brings-a-better-customer-experience-to-healthcare/",
+              "links": [
+                {
+                  "labels": [
+                    "Intelligent Process Automation"
+                  ],
+                  "url": "https://wiprodigital.com/tag/intelligent-process-automation/",
+                  "parent": "https://wiprodigital.com/2018/10/10/how-to-drive-effective-digital-strategy-with-intelligent-process-automation/",
+                  "links": []
+                },
+                {
+                  "labels": [
+                    "IPA"
+                  ],
+                  "url": "https://wiprodigital.com/tag/ipa/",
+                  "parent": "https://wiprodigital.com/2018/10/10/how-to-drive-effective-digital-strategy-with-intelligent-process-automation/",
+                  "links": []
+                }
+              ]
+            },
+            {
+              "labels": [
+                "Rethinking Customer Experience in the Expectation Economy"
+              ],
+              "url": "https://wiprodigital.com/2018/09/27/rethinking-customer-experience-in-the-expectation-economy/",
+              "parent": "https://wiprodigital.com/2018/12/06/how-salesforce-brings-a-better-customer-experience-to-healthcare/",
+              "links": []
+            }
+          ]
+        },
+        {
+          "labels": [
+            "Ajay Kumar Omer",
+            "Creating an engaging conversational interface for a successful bot adoption"
+          ],
+          "url": "https://wiprodigital.com/2019/01/03/creating-an-engaging-conversational-interface-for-a-successful-bot-adoption/",
+          "parent": "https://wiprodigital.com",
+          "links": [
+            {
+              "labels": [
+                "bots"
+              ],
+              "url": "https://wiprodigital.com/tag/bots/",
+              "parent": "https://wiprodigital.com/2019/01/03/creating-an-engaging-conversational-interface-for-a-successful-bot-adoption/",
+              "links": []
+            },
+            {
+              "labels": [
+                "chatbot interface"
+              ],
+              "url": "https://wiprodigital.com/tag/chatbot-interface/",
+              "parent": "https://wiprodigital.com/2019/01/03/creating-an-engaging-conversational-interface-for-a-successful-bot-adoption/",
+              "links": []
+            },
+            {
+              "labels": [
+                "interface"
+              ],
+              "url": "https://wiprodigital.com/tag/interface/",
+              "parent": "https://wiprodigital.com/2019/01/03/creating-an-engaging-conversational-interface-for-a-successful-bot-adoption/",
+              "links": []
+            },
+            {
+              "labels": [
+                "machine learning"
+              ],
+              "url": "https://wiprodigital.com/tag/machine-learning/",
+              "parent": "https://wiprodigital.com/2019/01/03/creating-an-engaging-conversational-interface-for-a-successful-bot-adoption/",
+              "links": []
+            },
+            {
+              "labels": [
+                "persona"
+              ],
+              "url": "https://wiprodigital.com/tag/persona/",
+              "parent": "https://wiprodigital.com/2019/01/03/creating-an-engaging-conversational-interface-for-a-successful-bot-adoption/",
+              "links": []
+            },
+            {
+              "labels": [
+                "Reducing Vehicle Recalls with Machine Learning and Artificial Intelligence"
+              ],
+              "url": "https://wiprodigital.com/2017/09/27/reducing-vehicle-recalls-machine-learning-artificial-intelligence/",
+              "parent": "https://wiprodigital.com/2019/01/03/creating-an-engaging-conversational-interface-for-a-successful-bot-adoption/",
+              "links": []
+            },
+            {
+              "labels": [
+                "Add Chatbots to Your Arsenal Today: Reap the Benefits During the Holiday Retail Season"
+              ],
+              "url": "https://wiprodigital.com/2017/09/20/add-chatbots-arsenal-today-reap-benefits-holiday-retail-season/",
+              "parent": "https://wiprodigital.com/2019/01/03/creating-an-engaging-conversational-interface-for-a-successful-bot-adoption/",
+              "links": []
+            }
+          ]
+        },
+        {
+          "labels": [
+            "Ayano Yamamoto",
+            "Hiring for Mindset"
+          ],
+          "url": "https://wiprodigital.com/2019/02/04/hiring-for-mindset/",
+          "parent": "https://wiprodigital.com",
+          "links": [
+            {
+              "labels": [
+                "careers"
+              ],
+              "url": "https://wiprodigital.com/tag/careers/",
+              "parent": "https://wiprodigital.com/2019/02/04/hiring-for-mindset/",
+              "links": []
+            },
+            {
+              "labels": [
+                "Nasscom Research: The Digital Academy by Wipro Digital"
+              ],
+              "url": "https://wiprodigital.com/2018/02/08/the-digital-academy-by-wipro-digital/",
+              "parent": "https://wiprodigital.com/2019/02/04/hiring-for-mindset/",
+              "links": []
+            },
+            {
+              "labels": [
+                "The Emerging Role of the Creative Technologist in the New Digital Ecosystem"
+              ],
+              "url": "https://wiprodigital.com/2017/02/14/emerging-role-creative-technologist-new-digital-ecosystem/",
+              "parent": "https://wiprodigital.com/2019/02/04/hiring-for-mindset/",
+              "links": []
+            }
+          ]
+        },
+        {
+          "labels": [
+            "Designit",
+            "Scriptwriting for Voice UI"
+          ],
+          "url": "https://wiprodigital.com/2019/01/10/scriptwriting-for-voice-ui/",
+          "parent": "https://wiprodigital.com",
+          "links": [
+            {
+              "labels": [
+                "Design Think"
+              ],
+              "url": "https://wiprodigital.com/tag/design-think/",
+              "parent": "https://wiprodigital.com/2019/01/10/scriptwriting-for-voice-ui/",
+              "links": []
+            },
+            {
+              "labels": [
+                "Prototyping"
+              ],
+              "url": "https://wiprodigital.com/tag/prototyping/",
+              "parent": "https://wiprodigital.com/2019/01/10/scriptwriting-for-voice-ui/",
+              "links": []
+            },
+            {
+              "labels": [
+                "strategic design"
+              ],
+              "url": "https://wiprodigital.com/tag/strategic-design/",
+              "parent": "https://wiprodigital.com/2019/01/10/scriptwriting-for-voice-ui/",
+              "links": []
+            },
+            {
+              "labels": [
+                "User Experience"
+              ],
+              "url": "https://wiprodigital.com/tag/user-experience/",
+              "parent": "https://wiprodigital.com/2019/01/10/scriptwriting-for-voice-ui/",
+              "links": []
+            },
+            {
+              "labels": [
+                "Voice Ui"
+              ],
+              "url": "https://wiprodigital.com/tag/voice-ui/",
+              "parent": "https://wiprodigital.com/2019/01/10/scriptwriting-for-voice-ui/",
+              "links": []
+            },
+            {
+              "labels": [
+                "Designing through fear"
+              ],
+              "url": "https://wiprodigital.com/2018/12/20/designing-through-fear/",
+              "parent": "https://wiprodigital.com/2019/01/10/scriptwriting-for-voice-ui/",
+              "links": []
+            },
+            {
+              "labels": [
+                "Designing for emergencies"
+              ],
+              "url": "https://wiprodigital.com/2018/12/11/designing-for-emergencies/",
+              "parent": "https://wiprodigital.com/2019/01/10/scriptwriting-for-voice-ui/",
+              "links": []
+            }
+          ]
+        },
+        {
+          "labels": [
+            "Insights by Andy Coghlan",
+            "Turning data into consumer growth"
+          ],
+          "url": "https://wiprodigital.com/2018/08/09/turning-data-into-consumer-growth/",
+          "parent": "https://wiprodigital.com",
+          "links": [
+            {
+              "labels": [
+                "CMO"
+              ],
+              "url": "https://wiprodigital.com/tag/cmo/",
+              "parent": "https://wiprodigital.com/2018/08/09/turning-data-into-consumer-growth/",
+              "links": []
+            },
+            {
+              "labels": [
+                "data"
+              ],
+              "url": "https://wiprodigital.com/tag/data/",
+              "parent": "https://wiprodigital.com/2018/08/09/turning-data-into-consumer-growth/",
+              "links": []
+            },
+            {
+              "labels": [
+                "Insights"
+              ],
+              "url": "https://wiprodigital.com/tag/insights/",
+              "parent": "https://wiprodigital.com/2018/08/09/turning-data-into-consumer-growth/",
+              "links": []
+            },
+            {
+              "labels": [
+                "Marketing Technology"
+              ],
+              "url": "https://wiprodigital.com/tag/marketing-technology/",
+              "parent": "https://wiprodigital.com/2018/08/09/turning-data-into-consumer-growth/",
+              "links": []
+            },
+            {
+              "labels": [
+                "MarTech"
+              ],
+              "url": "https://wiprodigital.com/tag/martech/",
+              "parent": "https://wiprodigital.com/2018/08/09/turning-data-into-consumer-growth/",
+              "links": []
+            },
+            {
+              "labels": [
+                "testing"
+              ],
+              "url": "https://wiprodigital.com/tag/testing/",
+              "parent": "https://wiprodigital.com/2018/08/09/turning-data-into-consumer-growth/",
+              "links": []
+            },
+            {
+              "labels": [
+                "CaaS 102: Getting Started with Content as a Service"
+              ],
+              "url": "https://wiprodigital.com/2018/07/26/caas-102-getting-started-with-content-as-a-service/",
+              "parent": "https://wiprodigital.com/2018/08/09/turning-data-into-consumer-growth/",
+              "links": [
+                {
+                  "labels": [
+                    "CaaS 101"
+                  ],
+                  "url": "https://wiprodigital.com/2018/07/19/caas-101-the-history-and-concepts-behind-content-as-a-service/",
+                  "parent": "https://wiprodigital.com/2018/07/26/caas-102-getting-started-with-content-as-a-service/",
+                  "links": []
+                },
+                {
+                  "labels": [
+                    "CaaS"
+                  ],
+                  "url": "https://wiprodigital.com/tag/caas/",
+                  "parent": "https://wiprodigital.com/2018/07/26/caas-102-getting-started-with-content-as-a-service/",
+                  "links": []
+                },
+                {
+                  "labels": [
+                    "Content As A Service"
+                  ],
+                  "url": "https://wiprodigital.com/tag/content-as-a-service/",
+                  "parent": "https://wiprodigital.com/2018/07/26/caas-102-getting-started-with-content-as-a-service/",
+                  "links": []
+                },
+                {
+                  "labels": [
+                    "digital experience"
+                  ],
+                  "url": "https://wiprodigital.com/tag/digital-experience/",
+                  "parent": "https://wiprodigital.com/2018/07/26/caas-102-getting-started-with-content-as-a-service/",
+                  "links": []
+                },
+                {
+                  "labels": [
+                    "DX"
+                  ],
+                  "url": "https://wiprodigital.com/tag/dx/",
+                  "parent": "https://wiprodigital.com/2018/07/26/caas-102-getting-started-with-content-as-a-service/",
+                  "links": []
+                },
+                {
+                  "labels": [
+                    "omni-channel"
+                  ],
+                  "url": "https://wiprodigital.com/tag/omni-channel/",
+                  "parent": "https://wiprodigital.com/2018/07/26/caas-102-getting-started-with-content-as-a-service/",
+                  "links": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "labels": [
+            "Insights by Zubin Limbuvala",
+            "Three ways to navigate your data science journey"
+          ],
+          "url": "https://wiprodigital.com/2018/10/04/three-ways-to-navigate-your-data-science-journey/",
+          "parent": "https://wiprodigital.com",
+          "links": [
+            {
+              "labels": [
+                "analytics"
+              ],
+              "url": "https://wiprodigital.com/tag/analytics/",
+              "parent": "https://wiprodigital.com/2018/10/04/three-ways-to-navigate-your-data-science-journey/",
+              "links": []
+            },
+            {
+              "labels": [
+                "Big Data"
+              ],
+              "url": "https://wiprodigital.com/tag/big-data/",
+              "parent": "https://wiprodigital.com/2018/10/04/three-ways-to-navigate-your-data-science-journey/",
+              "links": []
+            },
+            {
+              "labels": [
+                "Data Science"
+              ],
+              "url": "https://wiprodigital.com/tag/data-science/",
+              "parent": "https://wiprodigital.com/2018/10/04/three-ways-to-navigate-your-data-science-journey/",
+              "links": []
+            },
+            {
+              "labels": [
+                "Insights as-a-Service"
+              ],
+              "url": "https://wiprodigital.com/tag/insights-as-a-service/",
+              "parent": "https://wiprodigital.com/2018/10/04/three-ways-to-navigate-your-data-science-journey/",
+              "links": []
+            },
+            {
+              "labels": [
+                "17 things to follow for designers who want to understand how tech will shape our future"
+              ],
+              "url": "https://wiprodigital.com/2018/09/13/17-things-to-follow-for-designers-who-want-to-understand-how-tech-will-shape-our-future/",
+              "parent": "https://wiprodigital.com/2018/10/04/three-ways-to-navigate-your-data-science-journey/",
+              "links": []
+            }
+          ]
+        },
+        {
+          "labels": [
+            "Cases",
+            "A design system to enable future growth"
+          ],
+          "url": "https://wiprodigital.com/cases/a-design-system-to-enable-future-growth/",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Cases",
+            "Thames Water: A strategic move into Predictive planning"
+          ],
+          "url": "https://wiprodigital.com/cases/progressive-metering-a-utilitys-strategic-move-into-predictive-planning/",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Cases",
+            "VoluSense: Redefining newborn care"
+          ],
+          "url": "https://wiprodigital.com/case-study-redefining-newborn-care-for-volusense/",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Cases",
+            "Call Me: Speaking from the heart"
+          ],
+          "url": "https://wiprodigital.com/cases/case-study-speaking-from-the-heart/",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Cases",
+            "In24"
+          ],
+          "url": "https://wiprodigital.com/cases/in24/",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Events",
+            "Nate Clinton, Managing Director, Designit at SF Design Week 2018"
+          ],
+          "url": "https://wiprodigital.com/events/nate-clinton-managing-director-cooper-at-sf-design-week-2018/",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Events",
+            "Meet Wipro Digital at PEGA Customer Engagement Summit 2018"
+          ],
+          "url": "https://wiprodigital.com/events/meet-wipro-digital-at-pega-customer-engagement-summit-2018/",
+          "parent": "https://wiprodigital.com",
+          "links": [
+            {
+              "labels": [
+                "Request meeting"
+              ],
+              "url": " http://pegaworld.wiprodigital.com/events/pega-customer-engagement-summit-2018/ ",
+              "parent": "https://wiprodigital.com/events/meet-wipro-digital-at-pega-customer-engagement-summit-2018/",
+              "links": [
+                {
+                  "labels": [
+                    "Overview"
+                  ],
+                  "url": "#overview",
+                  "parent": " http://pegaworld.wiprodigital.com/events/pega-customer-engagement-summit-2018/ ",
+                  "links": []
+                },
+                {
+                  "labels": [
+                    "Meet us"
+                  ],
+                  "url": "#download",
+                  "parent": " http://pegaworld.wiprodigital.com/events/pega-customer-engagement-summit-2018/ ",
+                  "links": []
+                },
+                {
+                  "labels": [
+                    "Download insights"
+                  ],
+                  "url": "#offerings",
+                  "parent": " http://pegaworld.wiprodigital.com/events/pega-customer-engagement-summit-2018/ ",
+                  "links": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "labels": [
+            "Events",
+            "Join Wipro for two IoT panels at World Economic Forum (WEF)"
+          ],
+          "url": "https://wiprodigital.com/events/join-wipro-digital-for-two-iot-panels-at-world-economic-forum-wef/",
+          "parent": "https://wiprodigital.com",
+          "links": [
+            {
+              "labels": [
+                "Jayraj Nair"
+              ],
+              "url": "https://wiprodigital.com/people/jayraj-nair/",
+              "parent": "https://wiprodigital.com/events/join-wipro-digital-for-two-iot-panels-at-world-economic-forum-wef/",
+              "links": []
+            }
+          ]
+        },
+        {
+          "labels": [
+            "Events",
+            "Wipro Digital & Designit at IDC European Digital Executive Summit 2018"
+          ],
+          "url": "https://wiprodigital.com/events/wipro-digital-designit-at-idc-european-digital-executive-summit-2018/",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Events",
+            "Wipro Digital is a platinum sponsor at Pivotal’s SpringOne Platform 2018"
+          ],
+          "url": "https://wiprodigital.com/events/wipro-digital-is-a-platinum-sponsor-at-springone-platform-2018/",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Events",
+            "Teresa Brazen, Senior Director, Cooper at Design Thinking 2018"
+          ],
+          "url": "https://wiprodigital.com/events/teresa-brazen-senior-director-cooper-at-design-thinking-2018/",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "News",
+            "New MarTech study shows marketers may be overestimating ability to execute and deliver results from their investments"
+          ],
+          "url": "https://wiprodigital.com/news/the-state-of-martech-study/",
+          "parent": "https://wiprodigital.com",
+          "links": [
+            {
+              "labels": [
+                "shraboni.banerjee@wipro.com"
+              ],
+              "url": "mailto:shraboni.banerjee@wipro.com",
+              "parent": "https://wiprodigital.com/news/the-state-of-martech-study/",
+              "links": []
+            },
+            {
+              "labels": [
+                "rabeb@ruderfinn.com"
+              ],
+              "url": "mailto:rabeb@ruderfinn.com",
+              "parent": "https://wiprodigital.com/news/the-state-of-martech-study/",
+              "links": []
+            }
+          ]
+        },
+        {
+          "labels": [
+            "News",
+            "Wipro Rated a Leader in Digital Transformation in ITSMA Report"
+          ],
+          "url": "https://wiprodigital.com/news/wipro-rated-a-leader-in-digital-transformation-in-itsma-report/",
+          "parent": "https://wiprodigital.com",
+          "links": [
+            {
+              "labels": [
+                "prathibha.das@wipro.com"
+              ],
+              "url": "mailto:prathibha.das@wipro.com",
+              "parent": "https://wiprodigital.com/news/wipro-rated-a-leader-in-digital-transformation-in-itsma-report/",
+              "links": []
+            }
+          ]
+        },
+        {
+          "labels": [
+            "News",
+            "Wipro Digital to acquire Cooper, a leader in UX and interaction design, & expand Designit’s capabilities"
+          ],
+          "url": "https://wiprodigital.com/news/wipro-digital-acquire-cooper-leader-ux-interaction-design-expand-designits-capabilities/",
+          "parent": "https://wiprodigital.com",
+          "links": [
+            {
+              "labels": [
+                "vipin.nair1@wipro.com"
+              ],
+              "url": "mailto:vipin.nair1@wipro.com",
+              "parent": "https://wiprodigital.com/news/wipro-digital-acquire-cooper-leader-ux-interaction-design-expand-designits-capabilities/",
+              "links": []
+            }
+          ]
+        },
+        {
+          "labels": [
+            "News",
+            "Wipro Named global leader in Digital Transformation Strategy and Consulting"
+          ],
+          "url": "https://wiprodigital.com/news/wipro-named-global-leader-digital-transformation-strategy-consulting/",
+          "parent": "https://wiprodigital.com",
+          "links": [
+            {
+              "labels": [
+                "purnima.burman@wipro.com"
+              ],
+              "url": "mailto:purnima.burman@wipro.com",
+              "parent": "https://wiprodigital.com/news/wipro-named-global-leader-digital-transformation-strategy-consulting/",
+              "links": []
+            }
+          ]
+        },
+        {
+          "labels": [
+            "News",
+            "New survey highlights leadership crisis in Digital Transformation"
+          ],
+          "url": "https://wiprodigital.com/news/new-survey-highlights-leadership-crisis-digital-transformation/",
+          "parent": "https://wiprodigital.com",
+          "links": [
+            {
+              "labels": [
+                "Read our insights"
+              ],
+              "url": "https://wiprodigital.com/2017/06/01/a-crisis-in-digital-transformation-a-survey-of-400-us-senior-executives/",
+              "parent": "https://wiprodigital.com/news/new-survey-highlights-leadership-crisis-digital-transformation/",
+              "links": [
+                {
+                  "labels": [
+                    "Digital Leadership"
+                  ],
+                  "url": "https://wiprodigital.com/tag/digital-leadership/",
+                  "parent": "https://wiprodigital.com/2017/06/01/a-crisis-in-digital-transformation-a-survey-of-400-us-senior-executives/",
+                  "links": []
+                },
+                {
+                  "labels": [
+                    "Enterprise Transformation"
+                  ],
+                  "url": "https://wiprodigital.com/tag/enterprise-transformation/",
+                  "parent": "https://wiprodigital.com/2017/06/01/a-crisis-in-digital-transformation-a-survey-of-400-us-senior-executives/",
+                  "links": []
+                }
+              ]
+            },
+            {
+              "labels": [
+                "mulliganb@ruderfinn.com"
+              ],
+              "url": "mailto:mulliganb@ruderfinn.com",
+              "parent": "https://wiprodigital.com/news/new-survey-highlights-leadership-crisis-digital-transformation/",
+              "links": []
+            }
+          ]
+        },
+        {
+          "labels": [
+            "News",
+            "PAC's European Trend Study: Digital industrial revolution with Predictive Maintenance"
+          ],
+          "url": "https://wiprodigital.com/news/pacs-european-trend-study-digital-industrial-revolution-with-predictive-maintenance/",
+          "parent": "https://wiprodigital.com",
+          "links": [
+            {
+              "labels": [
+                "m.milojevic@pac-online.com"
+              ],
+              "url": "mailto:m.milojevic@pac-online.com",
+              "parent": "https://wiprodigital.com/news/pacs-european-trend-study-digital-industrial-revolution-with-predictive-maintenance/",
+              "links": []
+            },
+            {
+              "labels": [
+                "info-uk@pac-online.com"
+              ],
+              "url": "mailto:info-uk@pac-online.com",
+              "parent": "https://wiprodigital.com/news/pacs-european-trend-study-digital-industrial-revolution-with-predictive-maintenance/",
+              "links": []
+            }
+          ]
+        },
+        {
+          "labels": [
+            "Designit"
+          ],
+          "url": "https://wiprodigital.com/designit-approach/",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Designit"
+          ],
+          "url": "https://wiprodigital.com/designit-approach",
+          "parent": "https://wiprodigital.com",
+          "links": []
+        },
+        {
+          "labels": [
+            "Privacy policy"
+          ],
+          "url": "https://wiprodigital.com/privacy-policy",
+          "parent": "https://wiprodigital.com",
+          "links": [
+            {
+              "labels": [
+                "info@wipro.com"
+              ],
+              "url": "mailto:info@wipro.com",
+              "parent": "https://wiprodigital.com/privacy-policy",
+              "links": []
+            },
+            {
+              "labels": [
+                "dpo-europe@wipro.com"
+              ],
+              "url": "mailto:dpo-europe@wipro.com",
+              "parent": "https://wiprodigital.com/privacy-policy",
+              "links": []
+            }
+          ]
+        }
+      ],
+      "url": "https://wiprodigital.com"
+    }
+  ]
+}
