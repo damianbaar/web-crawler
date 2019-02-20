@@ -46,5 +46,10 @@ More [here](https://serverless.com/framework/docs/providers/aws/guide/credential
 * [`lambda`](https://aws.amazon.com/lambda/) - there is no point to hold an instance like `EC2` for [`RPC`](https://en.wikipedia.org/wiki/Remote_procedure_call) like call
 * [`yarn workspaces`](https://yarnpkg.com/lang/en/docs/workspaces/) - to have clean view on `npm` dependency tree and to have more meaningful parts of app
 
+##### Limitations / Caveats
+This solution is okey for static pages as it is parsing html file from get request, but is not suitable for Singe Page Apps.
+In case of SPA, frontend is taking more responsibility - dynamic importing of files/scripts becomes a standard and it is not possible to crawl such dynamic page when user interaction is required, i.e. scrolling, in such case only visible part on page is eagerly downloaded and wait until user interaction to show up rest of elements of page. 
+To make it more robust - more advance page crawling algorithm would be needed, something which won’t be only a parsing html page but instead of it will mimic real browser (i.e. [puppeteer](https://github.com/GoogleChrome/puppeteer)). 
+
 #### For `zsh` users
 * as you will spawn another shell via `nix shell` some of aliases / commands / paths would not work, however if you are an `zsh` user it should be seamless, assuming your `zsh` config lives within home directory, this is `~/.zshrc` if not, override `zdotdir/zshenv` before running `nix-shell` and apply necessary config.
