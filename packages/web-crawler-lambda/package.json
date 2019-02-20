@@ -7,7 +7,7 @@
     "test:integration": "jest -c jest.test.js",
     "test": "sls offline start --exec 'yarn run test:integration' --port 8080",
     "offline": "serverless offline start --port 8080",
-    "deploy": "serverless deploy function --function get-site-map",
+    "deploy": "serverless deploy",
     "test:invoke": "serverless invoke local --function get-site-map --path __fixture__/event.json"
   },
   "dependencies": {

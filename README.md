@@ -15,7 +15,7 @@ Simple webcrawler which follow the links `<a href>'s` within the same domain.
 * within folder run `nix-shell` command
 
 #### ... run lambda
-* `goto` folder `packages/web-crawler-lambda` and run `yarn run offline`
+* `goto` folder `packages/web-crawler-lambda` and run `yarn run offline` or with logging enabled `DEBUG=log:parser yarn run offline`
 * after compilation you can navigate to `localhost:8080/get-site-map`
 * to run on custom page, use query string, like so `http://localhost:8080/get-site-map?page=http://www.google.com`
 
@@ -28,8 +28,9 @@ Simple webcrawler which follow the links `<a href>'s` within the same domain.
 Just append at the end `--watch` for test command, this is, `yarn test:unit --watch`
 
 ### ... deploy
-* first familiarize with [sls deploy](https://serverless.com/framework/docs/providers/aws/guide/deploying/)
 * setup your aws credentials - more details below
+* goto `packages/web-crawler-lambda` and run `yarn run deploy`
+[More about serverless deploy](https://serverless.com/framework/docs/providers/aws/guide/deploying/)
 
 #### Setup
 

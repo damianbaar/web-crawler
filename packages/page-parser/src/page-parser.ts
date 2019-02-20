@@ -7,6 +7,9 @@ import { pipe } from 'fp-ts/lib/function'
 import { parse as parseURL, resolve, UrlWithStringQuery } from 'url'
 import { unflatten } from 'un-flatten-tree'
 import pMap from 'p-map'
+import debug from 'debug'
+
+const log = debug('log:parser')
 
 type Labels = [string, string]
 type URL = string
@@ -56,7 +59,7 @@ export const parseHTML =
   (htmlString: string) =>
     parse(htmlString) as HTMLElement
 
-export const getAnchors =
+export const getHTMLElements =
   (html: HTMLElement) =>
     html
       .querySelectorAll('a')
@@ -64,7 +67,7 @@ export const getAnchors =
         html.querySelectorAll('img'))
 
 // should be more robust and extensible
-export const anchorToDescriptor =
+export const htmlElementToDescriptor =
   (html: HTMLElement[]) =>
     html.map(d => ({
       labels: d.attributes.alt || getTextFromNode(d.childNodes).filter(Boolean),
@@ -78,8 +81,8 @@ export const skipDuplicates = uniq(urlSetoid)
 
 export const parseAnchors = pipe(
   parseHTML,
-  getAnchors,
-  anchorToDescriptor,
+  getHTMLElements,
+  htmlElementToDescriptor,
   skipDuplicates
 )
 
@@ -139,7 +142,7 @@ const relativeToFullPath =
 
 // better would be to go with monad transformer -> StateTaskEither
 export const traversePage =
-  (baseURL: string, options: TraverseOptions = { concurrency: 20 }, tree: Tree = {}): Promise<Tree> =>
+  (baseURL: string, options: TraverseOptions = { concurrency: 10 }, tree: Tree = {}): Promise<Tree> =>
     getURLsFromPage(baseURL)
       .then(doEffect((links) => { tree[baseURL] = { ...tree[baseURL], links, url: baseURL } }))
       .then(hrefs => hrefs.filter(skipPending(tree, baseURL)))
@@ -159,6 +162,7 @@ export const traversePage =
         .map(({ url }) => url)
         .filter(shouldFollow(baseURL))
       )
+      .then(doEffect((pagesToTraverse) => log(`getting pages from ${baseURL}: ${pagesToTraverse.join('\n')}`)))
       .then(pagesToTraverse =>
         pMap(pagesToTraverse, link =>
           traversePage(link, options, tree), options)

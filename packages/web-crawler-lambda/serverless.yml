@@ -10,10 +10,13 @@ provider:
   stage: dev
   region: us-east-2
   runtime: nodejs8.10
+  timeout: 60
 
 functions:
   get-site-map:
     handler: src/handler.getSiteMap
+    environment:
+      DEBUG: "log:parser"
     events:
       - http:
           method: get
